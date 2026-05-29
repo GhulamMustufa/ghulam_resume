@@ -130,9 +130,9 @@ export const projects: Project[] = [
     problem:
       'Blockchain engineers are in critical global shortage, yet most learning resources are passive and theory-heavy — disconnected from real development environments and impossible to act on without external tooling.',
     solution:
-      'Built an interactive Bitcoin/blockchain learning platform featuring an in-browser coding IDE, mentor booking system, and community-contributed tutorials — enabling learners to write, test, and deploy real on-chain code without leaving the platform.',
+      'Contributed to the React frontend of an interactive Bitcoin/blockchain learning platform — working alongside the Vaionex engineering team to build and maintain course interfaces, mentor booking flows, and the in-browser coding environment.',
     result:
-      'Platform became the leading Bitcoin education resource — integrated into the University of Exeter\'s official curriculum for 2+ consecutive years, showcased at BSV Global Blockchain Convention, and backed by Vaionex Corporation with a global developer community.',
+      'Platform grew into the leading Bitcoin education resource — integrated into the University of Exeter\'s official curriculum for 2+ consecutive years, showcased at BSV Global Blockchain Convention, and backed by Vaionex Corporation with a global developer community.',
     metrics: ['University of Exeter curriculum partner', 'Showcased at BSV Global Blockchain Convention', 'In-browser blockchain coding IDE', 'Freemium + mentor marketplace'],
     stack: ['React', 'Node.js', 'Bitcoin SV', 'Blockchain SDK', 'Google Analytics'],
     url: 'https://www.satolearn.com/',
