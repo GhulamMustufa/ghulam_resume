@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+
+:root {
+  /* next/font injects --font-sans via the variable class on <html> */
+  --font-family-sans: var(--font-sans, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif);
+
+  /* Typography scale */
+  --text-display: clamp(2rem, 5vw, 3.4rem);
+  --text-h1: clamp(1.65rem, 3vw, 2.5rem);
+  --text-h2: clamp(1.35rem, 2.2vw, 1.85rem);
+  --text-body-lg: clamp(1rem, 1.1vw, 1.15rem);
+  --text-body: 0.975rem;
+  --text-caption: 0.77rem;
+
+  /* Spacing rhythm (8px baseline) */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+
+  /* Glow system */
+  --glow-primary: 0 0 0 1px rgba(125, 211, 252, 0.2), 0 10px 30px rgba(56, 189, 248, 0.2);
+  --glow-soft: 0 10px 24px rgba(15, 23, 42, 0.45);
+  --glow-card: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 20px rgba(2, 6, 23, 0.45);
+
+  /* Default theme colours */
+  --color-page-bg: #020617;
+  --color-radial: rgba(59, 130, 246, 0.12);
+  --color-surface-1: #0f172a;
+  --color-surface-2: #020617;
+  --color-header-bg: rgba(15, 23, 42, 0.7);
+  --color-header-border: rgba(255, 255, 255, 0.12);
+  --color-cta-bg: #38bdf8;
+  --color-cta-text: #0f172a;
+  --color-cta-hover: #7dd3fc;
+  --color-subtle-bg: rgba(255, 255, 255, 0.05);
+  --color-subtle-border: rgba(255, 255, 255, 0.2);
+  --color-subtle-text: #e2e8f0;
+  --color-select-bg: rgba(15, 23, 42, 0.75);
+  --color-select-border: rgba(255, 255, 255, 0.15);
+  --color-select-text: #e2e8f0;
+}
+
+[data-theme='executive'] {
+  --color-page-bg: #0b1020;
+  --color-radial: rgba(99, 102, 241, 0.14);
+  --color-surface-1: #111827;
+  --color-surface-2: #090e1d;
+  --color-header-bg: rgba(17, 24, 39, 0.78);
+  --color-header-border: rgba(148, 163, 184, 0.25);
+  --color-cta-bg: #a78bfa;
+  --color-cta-text: #0f172a;
+  --color-cta-hover: #c4b5fd;
+  --glow-primary: 0 0 0 1px rgba(167, 139, 250, 0.22), 0 10px 30px rgba(167, 139, 250, 0.24);
+}
+
+[data-theme='neon-saas'] {
+  --color-page-bg: #040816;
+  --color-radial: rgba(16, 185, 129, 0.17);
+  --color-surface-1: #071329;
+  --color-surface-2: #030712;
+  --color-header-bg: rgba(6, 18, 38, 0.78);
+  --color-header-border: rgba(34, 211, 238, 0.26);
+  --color-cta-bg: #22d3ee;
+  --color-cta-text: #022c3a;
+  --color-cta-hover: #67e8f9;
+  --glow-primary: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 10px 34px rgba(45, 212, 191, 0.28);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page-bg);
+  font-family: var(--font-family-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-space {
+  margin-bottom: var(--space-7);
+}
+
+.text-display {
+  font-size: var(--text-display);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.text-section-title {
+  font-size: var(--text-h2);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.text-body-lg {
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.surface-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.75);
+  box-shadow: var(--glow-card);
+}
+
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-soft {
+  box-shadow: var(--glow-soft);
+}
+
+.app-shell {
+  background: var(--color-page-bg);
+}
+
+.theme-radial {
+  background: radial-gradient(circle at top, var(--color-radial), transparent 42%);
+}
+
+.site-header {
+  background: var(--color-header-bg);
+  border-color: var(--color-header-border);
+}
+
+.hero-surface {
+  background: linear-gradient(to bottom, var(--color-surface-1), var(--color-surface-2));
+}
+
+.accent-button {
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
+}
+
+.accent-button:hover {
+  background: var(--color-cta-hover);
+}
+
+.subtle-button {
+  background: var(--color-subtle-bg);
+  border-color: var(--color-subtle-border);
+  color: var(--color-subtle-text);
+}
+
+.subtle-button:hover {
+  background: color-mix(in srgb, var(--color-subtle-bg) 75%, white 25%);
+}
+
+.theme-select {
+  background: var(--color-select-bg);
+  border-color: var(--color-select-border);
+  color: var(--color-select-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
