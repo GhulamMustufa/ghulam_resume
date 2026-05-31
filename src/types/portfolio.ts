@@ -9,8 +9,8 @@ export type Stat = {
 
 export type Achievement = {
   metric: string
-  label: string
-  context: string
+  statement: string
+  company: string
 }
 
 export type Project = {

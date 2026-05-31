@@ -28,21 +28,43 @@ export const navItems = [
 
 /* Hero stat cards — context-labelled so they're meaningful at a glance */
 export const heroStats: Stat[] = [
+  { value: '0 rollbacks', label: '6+ consecutive sprints — Lumida Wealth' },
   { value: '100K+', label: 'Active users — Udhaar Book' },
-  { value: '50%', label: 'API latency cut — Dastgyr' },
-  { value: '99.9%', label: 'Uptime SLA — Lumida Wealth' },
   { value: '40%', label: 'App startup speed — Udhaar Book' },
+  { value: '50%', label: 'API latency cut — Dastgyr' },
 ]
 
-/* Key Achievements strip — mirrors resume achievements table */
-/* Exact 6 from resume Key Achievements table — same order */
 export const keyAchievements: Achievement[] = [
-  { metric: '50%', label: 'API Latency Cut', context: 'Dastgyr · Node.js re-arch' },
-  { metric: '40%', label: 'Faster Load Times', context: 'Udhaar Book · React Native' },
-  { metric: '30%', label: 'Engagement Growth', context: "Unilever 'Roll' · UX rollouts" },
-  { metric: '99.9%', label: 'Uptime SLA', context: 'Lumida Wealth · investor platform' },
-  { metric: '5%→2%', label: 'Crash Rate Cut', context: 'Dastgyr · Crashlytics' },
-  { metric: '3×', label: 'Traffic Scaled', context: 'Dastgyr · zero infra changes' },
+  {
+    metric: 'Zero rollbacks',
+    statement: 'Delivered optimised investor features on a fast monthly sprint cadence — zero production rollbacks across 6+ consecutive releases on a live high-net-worth investor platform.',
+    company: 'Lumida Wealth',
+  },
+  {
+    metric: '100K+ users impacted',
+    statement: 'Built and maintained critical ledger, payment, and credit features used daily by 100K+ SMB users — while cutting app startup by 40% through Hermes tuning, FlatList virtualisation, and strategic memoisation.',
+    company: 'Udhaar Book',
+  },
+  {
+    metric: '30% more engagement',
+    statement: "Grew user engagement on Unilever's nationwide B2B retail app through targeted UX redesigns and onboarding flow optimisation.",
+    company: "Unilever 'Roll'",
+  },
+  {
+    metric: 'End-to-end delivery',
+    statement: "Acted as a critical individual contributor on Roll — owning full sprint cycles end-to-end and consistently shipping fast, impactful features that kept the platform responsive to distributor demands.",
+    company: "Unilever 'Roll'",
+  },
+  {
+    metric: '50% faster APIs',
+    statement: 'Contributed to backend optimisations that halved API response times and enabled the platform to handle 3× the order volume with no additional infrastructure.',
+    company: 'Dastgyr',
+  },
+  {
+    metric: '5% → 2% crash rate',
+    statement: 'Halved mobile crash rate across three React Native apps through Crashlytics monitoring, structured error handling, and native module fixes.',
+    company: 'Dastgyr',
+  },
 ]
 
 export const projects: Project[] = [
@@ -54,8 +76,8 @@ export const projects: Project[] = [
     solution:
       'Shipped OAuth2-secured investor workflows, real-time portfolio sync, and LLM-powered insight experiences using OpenAI API across iOS, Android, and web.',
     result:
-      'Sustained 99.9% uptime SLA with zero production rollbacks across 6+ consecutive sprints. Reduced UI bug reports by 35% through WCAG 2.1 enforcement.',
-    metrics: ['99.9% uptime SLA', '0 rollbacks in 6+ sprints', '35% fewer UI bugs', 'Monthly release cadence'],
+      'Zero production rollbacks across 6+ consecutive sprints with a consistent monthly release cadence. Reduced UI bug reports by 35% through WCAG 2.1 enforcement.',
+    metrics: ['0 rollbacks in 6+ sprints', '35% fewer UI bugs', 'Monthly release cadence'],
     stack: ['React', 'React Native', 'Node.js', 'PostgreSQL', 'OpenAI API', 'OAuth2'],
     url: 'https://apps.apple.com/us/app/lumida-invest/id6753766251',
   },
@@ -80,8 +102,8 @@ export const projects: Project[] = [
     solution:
       'Maintained and scaled the app with targeted UX redesigns, onboarding optimisations, and Sentry-based proactive error monitoring with structured incident response.',
     result:
-      '30% engagement growth and 99.9% uptime across thousands of daily B2B distributor transactions nationwide.',
-    metrics: ['30% engagement growth', '99.9% uptime', 'Thousands of daily transactions'],
+      '30% engagement growth and 99% uptime across thousands of daily B2B distributor transactions nationwide.',
+    metrics: ['30% engagement growth', '99% uptime', 'Thousands of daily transactions'],
     stack: ['React Native', 'Sentry', 'Mobile Performance Tuning'],
     url: 'https://play.google.com/store/apps/details?id=com.oscar_unilever_app&hl=en',
   },
@@ -184,14 +206,14 @@ export const experiences: Experience[] = [
     mode: 'Remote · Full-time',
     highlight: 'AI-powered wealth management SaaS · High-net-worth US investor platform',
     outcomes: [
-      'Architected and shipped investor-facing features — portfolio tracking, real-time data sync, and OAuth2 authentication — across iOS, Android, and web, sustaining 99.9% uptime SLA.',
+      'Shipped investor-facing features — portfolio tracking, real-time data sync, and OAuth2 authentication — across iOS, Android, and web, collaborating cross-functionally to maintain zero production rollbacks across 6+ consecutive sprints.',
       'Integrated LLM-powered insights and AI-driven data visualisations using OpenAI API, accelerating investor decision workflows and increasing feature adoption.',
-      'Established a monthly release cadence delivering zero production rollbacks across 6+ consecutive sprints through disciplined CI/CD and cross-functional QA.',
-      'Enforced WCAG 2.1 accessibility standards and pixel-perfect responsive design across all breakpoints, reducing UI bug reports by 35%.',
+      'Contributed to a consistent monthly release cadence through disciplined CI/CD, cross-functional QA, and proactive issue resolution.',
+      'Improved UI/UX consistency and responsiveness across devices, reducing UI bug reports by 35% through WCAG 2.1 accessibility enforcement.',
     ],
   },
   {
-    role: 'Software Engineer — Mobile & Performance Lead',
+    role: 'Senior Software Engineer — Mobile & Performance',
     company: 'Udhaar Book',
     period: 'Jun 2022 – Jul 2025',
     mode: 'Full-time',
@@ -212,7 +234,7 @@ export const experiences: Experience[] = [
     outcomes: [
       'Maintained and scaled Roll, Unilever\'s mission-critical retail ordering app processing thousands of B2B transactions daily across Pakistan\'s distributor network.',
       'Increased user engagement by 30% through targeted UX redesigns, onboarding flow optimisation, and performance-focused feature rollouts.',
-      'Sustained 99.9% app uptime via Sentry-based error monitoring, proactive error boundary implementation, and a structured incident response process.',
+      'Sustained 99% app uptime via Sentry-based error monitoring, proactive error boundary implementation, and a structured incident response process.',
     ],
   },
   {
@@ -222,8 +244,8 @@ export const experiences: Experience[] = [
     mode: 'Contract',
     highlight: 'B2B e-commerce marketplace · 10K+ daily orders · Retailer, picker & driver apps',
     outcomes: [
-      'Engineered three React Native applications (retailer, picker, driver) from the ground up, collectively processing 10K+ orders per day with sub-200ms UI response times.',
-      'Re-architected Node.js and PostgreSQL backend services, reducing average API response time by 50% and enabling 3× traffic growth without infrastructure changes.',
+      'Built the picker app from scratch as sole developer; contributed to retailer and driver app features alongside the engineering team — collectively processing 10K+ daily orders with sub-200ms UI response times.',
+      'Collaborated on optimising Node.js and PostgreSQL backend services, contributing to a 50% reduction in API response times and enabling 3× traffic growth without infrastructure changes.',
       'Reduced mobile crash rate from 5% to 2% by integrating Crashlytics, implementing structured error handling, and resolving critical native module issues.',
     ],
   },
