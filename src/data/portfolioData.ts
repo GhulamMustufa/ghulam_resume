@@ -200,7 +200,7 @@ export const skillGroups: SkillGroup[] = [
 /* 6 roles — Cloud Coherence and Independent Clients removed to match resume focus */
 export const experiences: Experience[] = [
   {
-    role: 'Software Engineer — Full-Stack & Mobile',
+    role: 'Senior Software Engineer',
     company: 'Lumida Wealth',
     period: 'Aug 2025 – Present',
     mode: 'Remote · Full-time',
@@ -213,7 +213,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: 'Senior Software Engineer — Mobile & Performance',
+    role: 'Software Engineer',
     company: 'Udhaar Book',
     period: 'Jun 2022 – Jul 2025',
     mode: 'Full-time',
@@ -221,7 +221,7 @@ export const experiences: Experience[] = [
     outcomes: [
       'Owned end-to-end delivery of core ledger, credit management, and digital payment flows serving 100K+ SMBs — directly impacting company revenue and user retention.',
       'Cut app load times by 40% through React Native lazy loading, FlatList virtualisation, Hermes engine tuning, and strategic memoisation — measured via Flipper profiling.',
-      'Architected an offline-first sync layer using Firebase Realtime Database, reducing session drop-off by 25% for users on low-bandwidth mobile networks.',
+      'Contributed to a full refactor of the app\'s data layer to WatermelonDB, migrating core ledger and credit flows to improve offline reliability and reduce session drop-off by 25% for users on low-bandwidth mobile networks.',
       'Drove a consistent monthly release cadence across iOS and Android for 3 years, improving customer retention quarter-over-quarter.',
     ],
   },
