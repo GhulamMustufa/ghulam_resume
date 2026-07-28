@@ -22,16 +22,16 @@ export function ServicesSection() {
             transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
             className="surface-card flex flex-col rounded-2xl p-5"
           >
-            <service.icon className="mb-4 text-sky-300" size={20} />
-            <h3 className="text-sm font-semibold text-white">{service.title}</h3>
-            <p className="mt-2 flex-1 text-xs leading-relaxed text-slate-400">
+            <service.icon className="mb-4 text-[var(--color-accent-blue-text)]" size={20} />
+            <h3 className="text-sm font-semibold text-[var(--color-text-main)]">{service.title}</h3>
+            <p className="mt-2 flex-1 text-xs leading-relaxed text-[var(--color-text-muted)]">
               {service.description}
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5">
               {service.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-slate-300"
+                  className="rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-bg-subtle)] px-2 py-0.5 text-xs text-[var(--color-text-muted)]"
                 >
                   {tag}
                 </span>

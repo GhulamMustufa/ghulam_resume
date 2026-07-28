@@ -1,17 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-})
 
 const SITE_URL = 'https://resume-ghulam.vercel.app'
 
@@ -53,6 +48,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  icons: {
+    icon: [
+      { url: '/icon-light.png', media: '(prefers-color-scheme: light)' },
+      { url: '/icon-dark.png', media: '(prefers-color-scheme: dark)' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -87,12 +88,17 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      style={{ fontFamily: 'var(--font-geist-sans, var(--font-sans, ui-sans-serif, system-ui))' }}
+      suppressHydrationWarning
+    >
       <head>
         {/* Prevent theme flash before React hydrates */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{const t=localStorage.getItem('portfolio-theme');if(t==='executive'||t==='neon-saas')document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
+            __html: `try{const t=localStorage.getItem('portfolio-theme');const valid=['dark-ide','light-premium','dark-midnight','dark-graphite','dark-oled','dark-violet','light-minimal','light-warm','light-mono'];if(valid.includes(t))document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark-ide')}catch(e){document.documentElement.setAttribute('data-theme','dark-ide')}`,
           }}
         />
         <script
@@ -102,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeProvider>
-          <div className="app-shell relative min-h-screen text-slate-100">
+          <div className="app-shell relative min-h-screen text-[var(--color-text-main)]">
             <div className="theme-radial pointer-events-none absolute inset-0" aria-hidden="true" />
             <div className="relative mx-auto max-w-6xl px-4 pb-0 pt-6 sm:px-6 lg:px-8">
               <SiteHeader />

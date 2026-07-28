@@ -1,1 +1,10 @@
-export type ThemeName = 'default' | 'executive' | 'neon-saas'
+export type ThemeName =
+  | 'dark-ide'
+  | 'light-premium'
+  | 'light-minimal'
+  | 'light-warm'
+  | 'light-mono'
+  | 'dark-graphite'
+  | 'dark-oled'
+  | 'dark-violet'
+  | 'dark-midnight'

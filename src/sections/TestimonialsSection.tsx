@@ -22,8 +22,8 @@ export function TestimonialsSection() {
             transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
             className="surface-card rounded-2xl p-5"
           >
-            <p className="text-sm leading-relaxed text-slate-200">&ldquo;{item.quote}&rdquo;</p>
-            <footer className="mt-4 text-sm font-semibold text-sky-200">{item.author}</footer>
+            <p className="text-sm leading-relaxed text-[var(--color-text-main)]">&ldquo;{item.quote}&rdquo;</p>
+            <footer className="mt-4 text-sm font-semibold text-[var(--color-accent-blue-text)]">{item.author}</footer>
           </motion.blockquote>
         ))}
       </div>

@@ -1,37 +1,45 @@
-import { GitHubIcon, LinkedInIcon } from '@/components/ui/SocialIcons'
 
 export function Footer() {
   return (
-    <footer className="mt-4 border-t border-white/10 pb-10 pt-8 text-center">
-      <p className="text-xs text-slate-500">
-        © {new Date().getFullYear()} Ghulam Mustafa · Built with Next.js & TailwindCSS
-      </p>
-      <div className="mt-3 flex items-center justify-center gap-5">
-        <a
-          href="mailto:ghulammustafa.mf@gmail.com"
-          className="text-xs text-slate-400 transition hover:text-white"
+    <footer
+      className="mt-4 pb-10 pt-6"
+      style={{ borderTop: '1px solid var(--color-border-default)' }}
+    >
+      <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+        <div className="flex shrink-0 items-center">
+          <span className="text-mono text-sm font-bold tracking-widest opacity-80 sm:text-base">
+            GHULAM.DEV
+          </span>
+        </div>
+
+        <p
+          className="text-mono text-center"
+          style={{ color: 'var(--color-text-muted)', fontSize: '0.65rem', letterSpacing: '0.1em' }}
         >
-          ghulammustafa.mf@gmail.com
-        </a>
-        <span className="h-3 w-px bg-white/15" aria-hidden="true" />
-        <a
-          href="https://github.com/GhulamMustufa"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub profile"
-          className="text-slate-400 transition hover:text-white"
-        >
-          <GitHubIcon size={14} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/ghulam909"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn profile"
-          className="text-slate-400 transition hover:text-white"
-        >
-          <LinkedInIcon size={14} />
-        </a>
+          © {new Date().getFullYear()} AI ENGINEER. BUILT FOR PRECISION.
+        </p>
+
+        <div className="flex items-center gap-4">
+          {['GitHub', 'LinkedIn', 'Source'].map((label, i) => {
+            const hrefs = [
+              'https://github.com/GhulamMustufa',
+              'https://www.linkedin.com/in/ghulam909',
+              '#',
+            ]
+            return (
+              <a
+                key={label}
+                href={hrefs[i]}
+                target={hrefs[i] !== '#' ? '_blank' : undefined}
+                rel={hrefs[i] !== '#' ? 'noreferrer' : undefined}
+                className="text-mono transition-colors hover:text-[var(--color-text-main)]"
+                style={{ color: 'var(--color-text-muted)', fontSize: '0.65rem', letterSpacing: '0.1em' }}
+              >
+                {label}
+              </a>
+            )
+          })}
+        </div>
       </div>
     </footer>
   )

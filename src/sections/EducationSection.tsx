@@ -22,9 +22,9 @@ export function EducationSection() {
             transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
             className="surface-card rounded-2xl p-5"
           >
-            <h3 className="text-base font-semibold text-white">{item.institute}</h3>
-            <p className="mt-2 text-sm text-sky-200">{item.degree}</p>
-            <p className="mt-1 text-xs text-slate-400">{item.years}</p>
+            <h3 className="text-base font-semibold text-[var(--color-text-main)]">{item.institute}</h3>
+            <p className="mt-2 text-sm text-[var(--color-accent-blue-text)]">{item.degree}</p>
+            <p className="mt-1 text-xs text-[var(--color-text-muted)]">{item.years}</p>
           </motion.article>
         ))}
       </div>

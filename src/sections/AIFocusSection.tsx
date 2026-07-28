@@ -7,9 +7,9 @@ import { aiFocus } from '@/data/portfolioData'
 import { fadeInUp } from '@/lib/motion'
 
 const statusTone = {
-  shipping: 'bg-emerald-400/15 text-emerald-200',
-  active: 'bg-sky-400/15 text-sky-200',
-  building: 'bg-violet-400/15 text-violet-200',
+  shipping: 'bg-[var(--color-accent-green-bg)] text-[var(--color-accent-green-text)]',
+  active: 'bg-[var(--color-accent-blue-bg)] text-[var(--color-accent-blue-text)]',
+  building: 'bg-[var(--color-accent-violet-bg)] text-[var(--color-accent-violet-text)]',
 } as const
 
 export function AIFocusSection() {
@@ -30,13 +30,13 @@ export function AIFocusSection() {
             className="surface-card rounded-2xl p-5"
           >
             <div className="mb-3 flex items-center justify-between gap-2">
-              <BrainCircuit className="text-sky-300" size={18} />
+              <BrainCircuit className="text-[var(--color-accent-blue-text)]" size={18} />
               <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${statusTone[item.status]}`}>
                 {item.status}
               </span>
             </div>
-            <h3 className="text-base font-semibold text-white">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.description}</p>
+            <h3 className="text-base font-semibold text-[var(--color-text-main)]">{item.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{item.description}</p>
           </motion.article>
         ))}
       </div>

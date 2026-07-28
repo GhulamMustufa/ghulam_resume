@@ -80,6 +80,7 @@ export const projects: Project[] = [
     metrics: ['0 rollbacks in 6+ sprints', '35% fewer UI bugs', 'Monthly release cadence'],
     stack: ['React', 'React Native', 'Node.js', 'PostgreSQL', 'OpenAI API', 'OAuth2'],
     url: 'https://apps.apple.com/us/app/lumida-invest/id6753766251',
+    image: '/projects/lumida.jpg',
   },
   {
     title: 'Udhaar Book Ledger & Payment Flows',
@@ -93,6 +94,7 @@ export const projects: Project[] = [
     metrics: ['100K+ active users', '40% faster load times', '25% drop-off reduction', 'sub-200ms UI response'],
     stack: ['React Native', 'Firebase', 'Hermes', 'Flipper', 'Node.js'],
     url: 'https://play.google.com/store/apps/details?id=com.oscarudhaarapp&hl=en',
+    image: '/projects/udhaar.jpg',
   },
   {
     title: "Unilever 'Roll' Retail Platform",
@@ -106,6 +108,7 @@ export const projects: Project[] = [
     metrics: ['30% engagement growth', '99% uptime', 'Thousands of daily transactions'],
     stack: ['React Native', 'Sentry', 'Mobile Performance Tuning'],
     url: 'https://play.google.com/store/apps/details?id=com.oscar_unilever_app&hl=en',
+    image: '/projects/roll.jpg',
   },
   {
     title: 'Dastgyr Multi-App Commerce Engine',
@@ -119,6 +122,7 @@ export const projects: Project[] = [
     metrics: ['10K+ daily orders', '50% faster API response', '3× traffic scaled', 'Crash rate 5%→2%', 'sub-200ms UI'],
     stack: ['Node.js', 'PostgreSQL', 'React Native', 'Crashlytics', 'AWS'],
     url: 'https://play.google.com/store/apps/details?id=com.dstgyr.dastgyr',
+    image: '/projects/dastgyr.jpg',
   },
   {
     title: 'AI Visa Advisor',
@@ -132,6 +136,7 @@ export const projects: Project[] = [
     metrics: ['10 immigration regions', '17 government sources cited', '0–100 pathway scoring', 'Document checklist per pathway'],
     stack: ['Next.js', 'OpenAI API', 'TypeScript', 'Vercel'],
     url: 'https://ai-visa-advisor.vercel.app/',
+    image: '/projects/ai-visa.jpg',
   },
   {
     title: 'Proposalio — AI Proposal Generator',
@@ -145,6 +150,7 @@ export const projects: Project[] = [
     metrics: ['Sub-90s proposal generation', 'Real-time streaming output', 'Freemium + $19/mo Pro tier', 'Voice-matched personalisation'],
     stack: ['Next.js', 'OpenAI API', 'TypeScript', 'Streaming', 'Vercel'],
     url: 'https://ai-proposal-generator-chi.vercel.app/',
+    image: '/projects/proposalio.jpg',
   },
   {
     title: 'Satolearn — Bitcoin Education Platform',
@@ -158,6 +164,7 @@ export const projects: Project[] = [
     metrics: ['University of Exeter curriculum partner', 'Showcased at BSV Global Blockchain Convention', 'In-browser blockchain coding IDE', 'Freemium + mentor marketplace'],
     stack: ['React', 'Node.js', 'Bitcoin SV', 'Blockchain SDK', 'Google Analytics'],
     url: 'https://www.satolearn.com/',
+    image: '/projects/satolearn.jpg',
   },
   {
     title: 'Saddar — B2B Wholesale Marketplace',
@@ -171,13 +178,14 @@ export const projects: Project[] = [
     metrics: ['8+ product categories', 'Up to 30% below retail pricing', '3-day nationwide delivery SLA', 'Sentry-monitored reliability'],
     stack: ['Next.js', 'React', 'TypeScript', 'Sentry', 'SEO Optimisation'],
     url: 'https://www.saddar.com.pk/',
+    image: '/projects/saddar.jpg',
   },
 ]
 
 export const skillGroups: SkillGroup[] = [
   {
     name: 'Frontend',
-    items: ['React.js', 'Next.js', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'TailwindCSS', 'Redux', 'Material UI'],
+    items: ['React.js', 'Next.js', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'TailwindCSS', 'Redux', 'Zustand', 'Material UI'],
   },
   {
     name: 'Mobile',
@@ -185,15 +193,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     name: 'Backend + Databases',
-    items: ['Node.js', 'Express.js', 'Koa.js', 'GraphQL', 'RESTful APIs', 'WebSockets', 'JWT', 'OAuth2', 'PostgreSQL', 'MongoDB', 'Firebase (Realtime DB & Firestore)'],
+    items: ['Node.js', 'NestJS', 'Express.js', 'Koa.js', 'GraphQL', 'RESTful APIs', 'Prisma ORM', 'JWT', 'OAuth2', 'PostgreSQL', 'MongoDB', 'Firebase', 'Supabase'],
   },
   {
     name: 'AI + SaaS',
-    items: ['OpenAI API', 'LLM Integration', 'AI Feature Development', 'Real-time Pipelines', 'SaaS Architecture', 'Prompt Engineering'],
+    items: ['OpenAI API', 'Function Calling', 'Streaming APIs (SSE)', 'Prompt Engineering', 'LLM Integration', 'Real-time AI dashboards', 'SaaS Architecture'],
   },
   {
-    name: 'Cloud + Practices + Tools',
-    items: ['AWS (EC2, S3)', 'Docker', 'CI/CD', 'GitHub Actions', 'Vercel', 'System Design', 'Agile/Scrum', 'WCAG 2.1 Accessibility', 'Sentry', 'Crashlytics', 'Jira', 'Figma', 'Swagger'],
+    name: 'Cloud, QA & Tools',
+    items: ['AWS (EC2, S3, Lambda)', 'Docker', 'GitHub Actions', 'Vercel', 'Fastlane', 'Jest & Cypress', 'System Design', 'WCAG 2.1', 'Sentry', 'Crashlytics', 'Figma', 'Git & Postman'],
   },
 ]
 

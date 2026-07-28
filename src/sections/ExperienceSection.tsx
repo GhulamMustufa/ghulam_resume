@@ -1,46 +1,108 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SectionHeading } from '@/components/ui/SectionHeading'
 import { experiences } from '@/data/portfolioData'
-import { fadeInUp } from '@/lib/motion'
+import { fadeInUp, staggerContainer } from '@/lib/motion'
 
 export function ExperienceSection() {
   return (
     <section id="experience" className="section-space scroll-mt-20">
-      <SectionHeading
-        eyebrow="Experience"
-        title="Professional work history"
-        description="6 roles across fintech, B2B mobile, enterprise, and contract engagements — from 2019 to present."
-      />
+      {/* Section header */}
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <p
+            className="text-mono mb-1"
+            style={{ color: 'var(--color-accent-text)', fontSize: '0.65rem', letterSpacing: '0.18em' }}
+          >
+            ⬡ EXPERIENCE
+          </p>
+          <h2
+            className="text-section-title font-bold"
+            style={{ color: 'var(--color-text-main)' }}
+          >
+            Professional history
+          </h2>
+        </div>
+        <span
+          className="text-mono hidden sm:inline"
+          style={{ color: 'var(--color-text-muted)', fontSize: '0.65rem', letterSpacing: '0.14em' }}
+        >
+          {experiences.length} ROLES
+        </span>
+      </div>
 
-      <div className="space-y-4">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        className="space-y-3"
+      >
         {experiences.map((experience, index) => (
           <motion.article
             key={`${experience.company}-${experience.period}`}
-            {...fadeInUp}
-            transition={{ ...fadeInUp.transition, delay: index * 0.07 }}
-            className="surface-card rounded-2xl p-5 sm:p-6"
+            variants={fadeInUp}
+            transition={{ delay: index * 0.07 }}
+            className="surface-card p-5 sm:p-6"
           >
-            <div className="flex flex-wrap items-start justify-between gap-3">
+            {/* Header row */}
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
               <div>
-                <h3 className="text-base font-semibold text-white sm:text-lg">{experience.role}</h3>
-                <p className="mt-1 text-sm text-slate-300">
-                  {experience.company} · {experience.mode}
+                <h3
+                  className="text-base font-semibold"
+                  style={{ color: 'var(--color-text-main)', letterSpacing: '-0.01em' }}
+                >
+                  {experience.role}
+                </h3>
+                <p
+                  className="mt-0.5 text-sm"
+                  style={{ color: 'var(--color-text-muted)' }}
+                >
+                  {experience.company}
+                  {experience.mode ? ` · ${experience.mode}` : ''}
                 </p>
               </div>
-              <p className="rounded-full border border-white/15 px-3 py-1 text-xs text-slate-300">
+
+              {/* Period badge */}
+              <span
+                className="text-mono shrink-0 px-2.5 py-1 text-xs"
+                style={{
+                  background: 'var(--color-bg-subtle)',
+                  border: '1px solid var(--color-border-default)',
+                  borderRadius: '4px',
+                  color: 'var(--color-text-muted)',
+                  letterSpacing: '0.05em',
+                }}
+              >
                 {experience.period}
-              </p>
+              </span>
             </div>
 
-            <p className="mt-3 text-sm text-sky-200">{experience.highlight}</p>
+            {/* Highlight */}
+            {experience.highlight && (
+              <p
+                className="mt-3 text-xs font-medium"
+                style={{
+                  color: 'var(--color-accent-text)',
+                  paddingBottom: '0.75rem',
+                  borderBottom: '1px solid var(--color-border-default)',
+                }}
+              >
+                {experience.highlight}
+              </p>
+            )}
 
+            {/* Outcomes */}
             <ul className="mt-4 space-y-2">
               {experience.outcomes.map((outcome) => (
-                <li key={outcome} className="flex gap-2.5 text-sm text-slate-300">
+                <li
+                  key={outcome}
+                  className="flex gap-2.5 text-sm"
+                  style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}
+                >
                   <span
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400/60"
+                    className="mt-2 h-1 w-1 shrink-0 rounded-full"
+                    style={{ background: 'var(--color-border-strong)' }}
                     aria-hidden="true"
                   />
                   {outcome}
@@ -49,7 +111,7 @@ export function ExperienceSection() {
             </ul>
           </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -22,6 +22,9 @@ export type Project = {
   metrics: string[]
   stack: string[]
   url?: string
+  image?: string
+  imageDark?: string
+  imageLight?: string
 }
 
 export type SkillGroup = {
