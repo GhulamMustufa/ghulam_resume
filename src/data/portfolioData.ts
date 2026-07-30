@@ -1,4 +1,4 @@
-import { Mail, Phone, ExternalLink, Monitor, Smartphone, Sparkles, Server } from 'lucide-react'
+import { Mail, Phone, ExternalLink, Monitor, Smartphone, Sparkles, Server, Code, Database, Layers, Cpu, Globe, Cloud } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon } from '@/components/ui/SocialIcons'
 import type {
   Achievement,
@@ -16,14 +16,14 @@ import type {
 } from '@/types/portfolio'
 
 export const navItems = [
-  { label: 'Work', href: '#projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Education', href: '#education' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'AI Focus', href: '#ai-focus' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Work', href: '/#projects' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Education', href: '/#education' },
+  { label: 'Testimonials', href: '/#testimonials' },
+  { label: 'AI Focus', href: '/#ai-focus' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 /* Hero stat cards — context-labelled so they're meaningful at a glance */
@@ -69,6 +69,7 @@ export const keyAchievements: Achievement[] = [
 
 export const projects: Project[] = [
   {
+    slug: 'lumida-wealth',
     title: 'Lumida Wealth Investor Platform',
     category: 'AI + Fintech SaaS',
     problem:
@@ -83,6 +84,7 @@ export const projects: Project[] = [
     image: '/projects/lumida.jpg',
   },
   {
+    slug: 'udhaar-book',
     title: 'Udhaar Book Ledger & Payment Flows',
     category: 'B2B Mobile Product',
     problem:
@@ -97,6 +99,7 @@ export const projects: Project[] = [
     image: '/projects/udhaar.jpg',
   },
   {
+    slug: 'unilever-roll',
     title: "Unilever 'Roll' Retail Platform",
     category: 'Enterprise Mobile',
     problem:
@@ -111,6 +114,7 @@ export const projects: Project[] = [
     image: '/projects/roll.jpg',
   },
   {
+    slug: 'dastgyr',
     title: 'Dastgyr Multi-App Commerce Engine',
     category: 'Operational Commerce Infrastructure',
     problem:
@@ -125,6 +129,7 @@ export const projects: Project[] = [
     image: '/projects/dastgyr.jpg',
   },
   {
+    slug: 'ai-visa-advisor',
     title: 'AI Visa Advisor',
     category: 'AI · Immigration Tech',
     problem:
@@ -139,6 +144,7 @@ export const projects: Project[] = [
     image: '/projects/ai-visa.jpg',
   },
   {
+    slug: 'proposalio',
     title: 'Proposalio — AI Proposal Generator',
     category: 'AI · Freelance SaaS',
     problem:
@@ -153,6 +159,7 @@ export const projects: Project[] = [
     image: '/projects/proposalio.jpg',
   },
   {
+    slug: 'satolearn',
     title: 'Satolearn — Bitcoin Education Platform',
     category: 'EdTech · Web3 · Blockchain',
     problem:
@@ -167,6 +174,7 @@ export const projects: Project[] = [
     image: '/projects/satolearn.jpg',
   },
   {
+    slug: 'saddar',
     title: 'Saddar — B2B Wholesale Marketplace',
     category: 'B2B E-Commerce · Marketplace',
     problem:
@@ -355,31 +363,192 @@ export const socialLinks: SocialLink[] = [
 
 export const services: Service[] = [
   {
+    slug: 'saas-web-apps',
     title: 'SaaS & Web Apps',
     description:
       'Full-stack web products — dashboards, multi-tenant SaaS, and landing pages built to ship fast and scale further.',
     tags: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'TypeScript'],
     icon: Monitor,
+    showOnHomepage: true,
   },
   {
+    slug: 'mobile-apps',
     title: 'Mobile Apps',
     description:
       'Cross-platform iOS & Android apps in React Native. Production-grade UX, offline support, and App Store delivery.',
     tags: ['React Native', 'Expo', 'Firebase', 'iOS', 'Android'],
     icon: Smartphone,
+    showOnHomepage: true,
   },
   {
+    slug: 'ai-feature-integration',
     title: 'AI Feature Integration',
     description:
       'Add LLM-powered capabilities to your product — chat interfaces, document summarisation, data extraction, and AI workflows.',
     tags: ['OpenAI API', 'GPT-4', 'Node.js', 'Streaming', 'Prompt Engineering'],
     icon: Sparkles,
+    showOnHomepage: true,
   },
   {
+    slug: 'api-backend',
     title: 'API & Backend',
     description:
       'REST APIs, third-party integrations, database design, and backend architecture for web and mobile products.',
     tags: ['Node.js', 'TypeScript', 'PostgreSQL', 'Firebase', 'REST'],
     icon: Server,
+    showOnHomepage: true,
   },
+  // --- SEO Production Pages (Hidden from main homepage grid) ---
+  {
+    slug: 'react-native-developer',
+    title: 'Senior React Native Developer',
+    description: 'Cross-platform mobile apps for iOS and Android built with React Native and Expo.',
+    tags: ['React Native', 'Expo', 'Mobile Architecture'],
+    icon: Smartphone,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Shipped high-performance mobile apps for 100K+ users.',
+    capabilities: ['Offline-First Architecture', 'Hermes Engine Optimization', 'Native Modules', 'Over-The-Air (OTA) Updates', 'App Store / Play Store Deployment'],
+    caseStudySlugs: ['udhaar-book', 'lumida-wealth'],
+    faqs: [
+      { question: 'Why choose React Native over Swift/Kotlin?', answer: 'React Native allows for a single codebase to target both iOS and Android simultaneously, cutting development time in half while maintaining near-native performance thanks to the Hermes engine.' },
+      { question: 'Can you handle offline capabilities?', answer: 'Yes, I architect offline-first mobile apps using WatermelonDB and Firebase to ensure your users have a seamless experience regardless of network conditions.' },
+      { question: 'Do you help with App Store submissions?', answer: 'Absolutely. I handle the entire lifecycle, from development to Fastlane CI/CD automation, and final App Store and Google Play submissions.' }
+    ]
+  },
+  {
+    slug: 'nextjs-developer',
+    title: 'Next.js Expert Developer',
+    description: 'Scalable, SEO-optimised web applications and SaaS platforms built on Next.js.',
+    tags: ['Next.js', 'App Router', 'SSR/SSG'],
+    icon: Globe,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Architecting fast, high-conversion Next.js applications.',
+    capabilities: ['App Router Architecture', 'Server Actions', 'SSR & Static Generation', 'SEO & Metadata Optimization', 'Edge Computing'],
+    caseStudySlugs: ['saddar', 'lumida-wealth'],
+    faqs: [
+      { question: 'Why Next.js for my SaaS?', answer: 'Next.js provides Server-Side Rendering (SSR) out of the box, ensuring lightning-fast initial load times and perfect SEO indexing, which is critical for customer acquisition.' },
+      { question: 'Do you use the new App Router?', answer: 'Yes, I specialize in the Next.js 14/15 App Router paradigm, leveraging Server Components and Server Actions for optimal performance.' },
+      { question: 'Can you migrate my React app to Next.js?', answer: 'Yes, I can incrementally or fully migrate standard React single-page applications into structured Next.js architectures to boost performance.' }
+    ]
+  },
+  {
+    slug: 'react-developer',
+    title: 'Senior React Developer',
+    description: 'Interactive, state-driven frontends engineered for performance and scalability.',
+    tags: ['React', 'Zustand', 'TailwindCSS'],
+    icon: Code,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Delivering responsive, modern React architectures.',
+    capabilities: ['Component-Driven Design', 'Complex State Management', 'Performance Profiling', 'TailwindCSS Integration', 'Micro-frontends'],
+    caseStudySlugs: ['saddar'],
+    faqs: [
+      { question: 'How do you manage complex application state?', answer: 'I use modern, lightweight solutions like Zustand or React Context for global state, and React Query for server-state synchronization to avoid prop-drilling.' },
+      { question: 'How do you ensure UI components are reusable?', answer: 'I build strict, atomic design systems using TailwindCSS and tools like Storybook to ensure components are deeply reusable and maintainable.' }
+    ]
+  },
+  {
+    slug: 'node-js-developer',
+    title: 'Node.js Backend Engineer',
+    description: 'High-throughput APIs and microservices powered by Node.js and TypeScript.',
+    tags: ['Node.js', 'Express', 'API Design'],
+    icon: Server,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Building scalable Node.js backends that handle serious traffic.',
+    capabilities: ['RESTful API Design', 'Authentication & OAuth2', 'Database Architecture', 'WebSocket Real-time Sync', 'Performance Tuning'],
+    caseStudySlugs: ['udhaar-book', 'saddar'],
+    faqs: [
+      { question: 'Is Node.js scalable enough for enterprise?', answer: 'Absolutely. With proper event-loop management, clustering, and asynchronous I/O, Node.js handles massive concurrency efficiently.' },
+      { question: 'Do you write tests for the backend?', answer: 'Yes, I implement rigorous unit and integration testing using Jest and Supertest to ensure the API contracts remain stable across deployments.' }
+    ]
+  },
+  {
+    slug: 'nestjs-developer',
+    title: 'NestJS Developer',
+    description: 'Enterprise-grade Node.js architectures utilizing NestJS for structure and scale.',
+    tags: ['NestJS', 'TypeScript', 'Microservices'],
+    icon: Layers,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Architecting robust, enterprise-grade NestJS backends.',
+    capabilities: ['Dependency Injection', 'Modular Architecture', 'GraphQL & REST Integration', 'DTO Validation', 'Microservices'],
+    caseStudySlugs: [],
+    faqs: [
+      { question: 'Why choose NestJS over Express?', answer: 'NestJS enforces a highly structured, modular architecture using Dependency Injection (similar to Angular or Spring), making large codebases much easier to scale and maintain with multiple developers.' },
+      { question: 'Can NestJS integrate with my existing database?', answer: 'Yes, NestJS integrates seamlessly with Prisma, TypeORM, and Mongoose, allowing it to connect to PostgreSQL, MySQL, or MongoDB natively.' }
+    ]
+  },
+  {
+    slug: 'full-stack-engineer',
+    title: 'Senior Full-Stack Engineer',
+    description: 'End-to-end web and mobile product development from database to UI.',
+    tags: ['Full-Stack', 'Architecture', 'Product Delivery'],
+    icon: Monitor,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Shipping complete products from database schema to UI.',
+    capabilities: ['System Architecture', 'Frontend & Backend Sync', 'Database Design', 'CI/CD Pipelines', 'Product Roadmapping'],
+    caseStudySlugs: ['lumida-wealth', 'udhaar-book', 'saddar'],
+    faqs: [
+      { question: 'Can you handle the entire project lifecycle?', answer: 'Yes, I act as an autonomous engineer capable of taking a product from PRD (Product Requirements Document) to database design, API implementation, frontend development, and deployment.' },
+      { question: 'What is your preferred full-stack stack?', answer: 'I specialize in the T3-adjacent stack: Next.js (React), TypeScript, Node.js, and PostgreSQL, often leveraging TailwindCSS and Prisma.' }
+    ]
+  },
+  {
+    slug: 'ai-engineer',
+    title: 'AI Engineer',
+    description: 'Integrating LLMs, prompt engineering, and intelligent features into SaaS products.',
+    tags: ['OpenAI', 'Prompt Engineering', 'AI Integration'],
+    icon: Cpu,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Injecting production-ready AI into real-world applications.',
+    capabilities: ['LLM API Integration', 'Prompt Engineering', 'AI Agents', 'Streaming Responses', 'AI UI/UX Design'],
+    caseStudySlugs: ['lumida-wealth'],
+    faqs: [
+      { question: 'How do you prevent AI hallucinations?', answer: 'I utilize strict system prompts, temperature tuning, and function-calling (Structured Outputs) to force the AI to return deterministic, typed JSON rather than free-form text.' },
+      { question: 'Can you stream AI responses like ChatGPT?', answer: 'Yes, I implement Server-Sent Events (SSE) and Vercel AI SDK to stream AI tokens directly to the client for a highly responsive UI experience.' }
+    ]
+  },
+  {
+    slug: 'llm-engineer',
+    title: 'LLM Integration Engineer',
+    description: 'Specialized in connecting Large Language Models to proprietary business logic.',
+    tags: ['LLMs', 'Function Calling', 'OpenAI API'],
+    icon: Sparkles,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Bridging Large Language Models with business workflows.',
+    capabilities: ['Function Calling (Tool Use)', 'Context Window Optimization', 'Cost Management', 'Model Fine-tuning', 'Evaluation Pipelines'],
+    caseStudySlugs: ['lumida-wealth'],
+    faqs: [
+      { question: 'Which LLMs do you work with?', answer: 'I primarily integrate OpenAI (GPT-4o), Anthropic (Claude 3.5 Sonnet), and Google (Gemini 1.5 Pro) depending on the specific cost and reasoning requirements of the task.' },
+      { question: 'How do you handle rate limits and costs?', answer: 'I implement robust caching mechanisms, exponential backoff for retries, and strategic routing between smaller (cheaper) and larger (smarter) models based on the complexity of the request.' }
+    ]
+  },
+  {
+    slug: 'rag-engineer',
+    title: 'RAG (Retrieval-Augmented Generation) Engineer',
+    description: 'Building custom AI search and chat systems using vector databases.',
+    tags: ['RAG', 'Vector Databases', 'Embeddings'],
+    icon: Database,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Making AI understand your proprietary data via RAG.',
+    capabilities: ['Vector Database Integration (Pinecone, Supabase pgvector)', 'Document Chunking Strategies', 'Embedding Models', 'Semantic Search', 'Hybrid Search'],
+    caseStudySlugs: [],
+    faqs: [
+      { question: 'What is RAG and why do I need it?', answer: 'RAG allows an LLM to accurately answer questions based on your private company documents (like PDFs, Notion docs, or internal wikis) without needing to retrain the model.' },
+      { question: 'Which vector database do you use?', answer: 'I typically use Supabase pgvector for unified relational and vector data, or Pinecone for dedicated, highly scalable vector search.' }
+    ]
+  },
+  {
+    slug: 'saas-developer',
+    title: 'SaaS Architecture Developer',
+    description: 'Scalable, multi-tenant software-as-a-service application development.',
+    tags: ['SaaS', 'Multi-tenant', 'Stripe'],
+    icon: Cloud,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Architecting multi-tenant SaaS platforms built for scale.',
+    capabilities: ['Multi-tenant Architecture', 'Stripe Subscriptions', 'OAuth2 & Role-Based Access Control (RBAC)', 'Admin Dashboards', 'Webhooks'],
+    caseStudySlugs: ['lumida-wealth', 'saddar'],
+    faqs: [
+      { question: 'How do you handle user subscriptions?', answer: 'I integrate Stripe Billing to manage complex SaaS tiers, prorations, and webhook events for provisioning and revoking access automatically.' },
+      { question: 'Is the data architecture secure for multi-tenant SaaS?', answer: 'Yes, I implement strict Row-Level Security (RLS) in PostgreSQL or application-level tenant isolation to guarantee cross-tenant data privacy.' }
+    ]
+  }
 ]

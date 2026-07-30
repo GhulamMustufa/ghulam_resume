@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { services } from '@/data/portfolioData'
 import { fadeInUp } from '@/lib/motion'
@@ -15,13 +16,18 @@ export function ServicesSection() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((service, index) => (
+        {services.filter((s) => s.showOnHomepage !== false).map((service, index) => (
           <motion.div
             key={service.title}
             {...fadeInUp}
             transition={{ ...fadeInUp.transition, delay: index * 0.08 }}
-            className="surface-card flex flex-col rounded-2xl p-5"
+            className="surface-card group relative flex flex-col rounded-2xl p-5"
           >
+            <Link
+              href={`/services/${service.slug}`}
+              className="absolute inset-0 z-10 rounded-[inherit]"
+              aria-label={`View details for ${service.title}`}
+            />
             <service.icon className="mb-4 text-[var(--color-accent-blue-text)]" size={20} />
             <h3 className="text-sm font-semibold text-[var(--color-text-main)]">{service.title}</h3>
             <p className="mt-2 flex-1 text-xs leading-relaxed text-[var(--color-text-muted)]">

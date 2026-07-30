@@ -101,6 +101,7 @@ export function HeroSection() {
                 fill
                 className="object-cover object-top"
                 priority
+                fetchPriority="high"
               />
             </div>
           </motion.div>

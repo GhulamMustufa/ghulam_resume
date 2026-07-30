@@ -1,18 +1,32 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { Footer } from '@/components/layout/Footer'
-import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { DynamicScrollToTop } from '@/components/ui/DynamicScrollToTop'
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const SITE_URL = 'https://resume-ghulam.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Ghulam Mustafa | Senior Full-Stack & Mobile Engineer',
+  title: {
+    default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+    template: '%s | Ghulam Mustafa',
+  },
   description:
     'Ghulam Mustafa — Senior Full-Stack & Mobile Engineer with 5+ years shipping production React, Node.js, and AI-integrated applications. Open to senior remote roles.',
   authors: [{ name: 'Ghulam Mustafa' }],
@@ -33,7 +47,10 @@ export const metadata: Metadata = {
     'Remote Mobile Engineer',
   ],
   openGraph: {
-    title: 'Ghulam Mustafa | Senior Full-Stack & Mobile Engineer',
+    title: {
+      default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+      template: '%s | Ghulam Mustafa',
+    },
     description:
       'Senior engineer building AI-powered SaaS and high-performance web/mobile products. 5+ years · React · React Native · Node.js.',
     type: 'website',
@@ -42,11 +59,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ghulam Mustafa | Senior Full-Stack & Mobile Engineer',
+    title: {
+      default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+      template: '%s | Ghulam Mustafa',
+    },
     description: 'Senior engineer · React · Node.js · AI · Open to senior remote roles',
   },
   alternates: {
-    canonical: SITE_URL,
+    canonical: '/',
   },
   icons: {
     icon: [
@@ -63,26 +83,48 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Ghulam Mustafa',
-  jobTitle: 'Senior Full-Stack & Mobile Engineer',
-  url: SITE_URL,
-  email: 'ghulammustafa.mf@gmail.com',
-  sameAs: [
-    'https://github.com/GhulamMustufa',
-    'https://www.linkedin.com/in/ghulam909',
-  ],
-  knowsAbout: [
-    'React',
-    'React Native',
-    'Node.js',
-    'TypeScript',
-    'Next.js',
-    'OpenAI API',
-    'AI Engineering',
-    'SaaS Architecture',
-    'PostgreSQL',
-    'Firebase',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: 'Ghulam Mustafa',
+      jobTitle: 'Product-Minded AI, SaaS & Mobile Engineer',
+      url: SITE_URL,
+      email: 'ghulammustafa.mf@gmail.com',
+      sameAs: [
+        'https://github.com/GhulamMustufa',
+        'https://www.linkedin.com/in/ghulam909',
+        'https://twitter.com/GhulamMustufa',
+      ],
+      knowsAbout: [
+        'React',
+        'React Native',
+        'Next.js',
+        'TypeScript',
+        'Next.js',
+        'OpenAI API',
+        'AI Engineering',
+        'SaaS Architecture',
+        'PostgreSQL',
+        'Firebase',
+        'Node.js',
+        'Artificial Intelligence',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Ghulam Mustafa — Portfolio',
+      url: SITE_URL,
+    },
+    {
+      '@type': 'ProfilePage',
+      isPartOf: {
+        '@id': SITE_URL,
+      },
+      about: {
+        '@type': 'Person',
+        name: 'Ghulam Mustafa',
+      },
+    },
   ],
 }
 
@@ -90,7 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
       style={{ fontFamily: 'var(--font-geist-sans, var(--font-sans, ui-sans-serif, system-ui))' }}
       suppressHydrationWarning
     >
@@ -117,7 +159,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </ThemeProvider>
-        <ScrollToTop />
+        <DynamicScrollToTop />
         <Analytics />
       </body>
     </html>

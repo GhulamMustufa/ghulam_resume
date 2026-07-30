@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import clsx from 'clsx'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTheme } from '@/components/ThemeProvider'
 import { projects } from '@/data/portfolioData'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
@@ -54,15 +55,11 @@ export function ProjectsSection() {
             className="surface-card group relative flex flex-col p-4 sm:p-5"
           >
             {/* Full-card clickable overlay */}
-            {project.url && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                className="absolute inset-0 z-10 rounded-[inherit]"
-                aria-label={`Open ${project.title}`}
-              />
-            )}
+            <Link
+              href={`/projects/${project.slug}`}
+              className="absolute inset-0 z-10 rounded-[inherit]"
+              aria-label={`View details for ${project.title}`}
+            />
             {/* Card top: category badge + link */}
             <div className="mb-3 flex items-start justify-between gap-3">
               <span

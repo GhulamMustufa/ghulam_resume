@@ -14,6 +14,7 @@ export type Achievement = {
 }
 
 export type Project = {
+  slug: string
   title: string
   category: string
   problem: string
@@ -79,8 +80,16 @@ export type SocialLink = {
 }
 
 export type Service = {
+  slug: string
   title: string
   description: string
   tags: string[]
   icon: IconComponent
+  
+  // SEO & Production Page Content Fields
+  showOnHomepage?: boolean
+  metricDrivenHeader?: string
+  capabilities?: string[]
+  caseStudySlugs?: string[]
+  faqs?: { question: string; answer: string }[]
 }

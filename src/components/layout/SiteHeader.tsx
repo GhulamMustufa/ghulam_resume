@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Menu, X, Sun, Moon } from 'lucide-react'
 import clsx from 'clsx'
 import { navItems } from '@/data/portfolioData'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { useTheme } from '@/components/ThemeProvider'
 import type { ThemeName } from '@/types/theme'
 
@@ -25,13 +27,20 @@ export function SiteHeader() {
   const [activeSection, setActiveSection] = useState('')
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
 
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMounted(true) }, [])
 
   /* Track which section is in the viewport centre */
   useEffect(() => {
-    const ids = navItems.map((item) => item.href.slice(1))
+    // Only track on the home page
+    if (pathname !== '/') {
+      setActiveSection('')
+      return
+    }
+
+    const ids = navItems.map((item) => item.href.split('#')[1])
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,16 +51,22 @@ export function SiteHeader() {
           }
         }
       },
-      { rootMargin: '-20% 0px -70% 0px' },
+      { rootMargin: '-40% 0px -40% 0px' },
     )
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
+    // Give the DOM a tiny bit of time to render the sections after route change
+    const timeout = setTimeout(() => {
+      ids.forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) observer.observe(el)
+      })
+    }, 100)
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      clearTimeout(timeout)
+      observer.disconnect()
+    }
+  }, [pathname])
 
   return (
     <motion.header
@@ -72,10 +87,10 @@ export function SiteHeader() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
           {navItems.map((item) => {
-            const sectionId = item.href.slice(1)
+            const sectionId = item.href.split('#')[1]
             const isActive = activeSection === sectionId
             return (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 className={clsx(
@@ -93,7 +108,7 @@ export function SiteHeader() {
                     style={{ background: 'var(--color-accent-text)' }}
                   />
                 )}
-              </a>
+              </Link>
             )
           })}
         </nav>
@@ -166,22 +181,26 @@ export function SiteHeader() {
             >
 
               {navItems.map((item) => {
-                const sectionId = item.href.slice(1)
+                const sectionId = item.href.split('#')[1]
                 const isActive = activeSection === sectionId
                 return (
-                  <a
+                  <Link
                     key={item.label}
                     href={item.href}
                     onClick={(e) => {
-                      e.preventDefault()
-                      setMobileOpen(false)
-                      setTimeout(() => {
-                        const target = document.querySelector(item.href)
-                        if (target) {
-                          target.scrollIntoView({ behavior: 'smooth' })
-                          window.history.pushState(null, '', item.href)
-                        }
-                      }, 250)
+                      if (pathname === '/') {
+                        e.preventDefault()
+                        setMobileOpen(false)
+                        setTimeout(() => {
+                          const target = document.querySelector(`#${sectionId}`)
+                          if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' })
+                            window.history.pushState(null, '', item.href)
+                          }
+                        }, 250)
+                      } else {
+                        setMobileOpen(false)
+                      }
                     }}
                     className={clsx(
                       'rounded px-3 py-2 text-sm transition',
@@ -196,7 +215,7 @@ export function SiteHeader() {
                     }
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 )
               })}
             </div>
