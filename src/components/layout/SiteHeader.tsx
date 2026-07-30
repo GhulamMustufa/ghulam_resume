@@ -10,18 +10,6 @@ import Link from 'next/link'
 import { useTheme } from '@/components/ThemeProvider'
 import type { ThemeName } from '@/types/theme'
 
-const themes: { value: ThemeName; label: string; group: string }[] = [
-  { value: 'dark-ide', label: 'IDE Dark', group: 'Dark' },
-  { value: 'dark-midnight', label: 'Midnight Navy', group: 'Dark' },
-  { value: 'dark-graphite', label: 'Graphite', group: 'Dark' },
-  { value: 'dark-oled', label: 'OLED Black', group: 'Dark' },
-  { value: 'dark-violet', label: 'Violet Space', group: 'Dark' },
-  { value: 'light-premium', label: 'Premium Light', group: 'Light' },
-  { value: 'light-minimal', label: 'Minimal', group: 'Light' },
-  { value: 'light-warm', label: 'Warm', group: 'Light' },
-  { value: 'light-mono', label: 'Monochrome', group: 'Light' },
-]
-
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
@@ -36,6 +24,7 @@ export function SiteHeader() {
   useEffect(() => {
     // Only track on the home page
     if (pathname !== '/') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setActiveSection('')
       return
     }

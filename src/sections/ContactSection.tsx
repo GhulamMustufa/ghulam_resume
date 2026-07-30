@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Check, Copy, Mail } from 'lucide-react'
+import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { contactActions, contactDetails, socialLinks } from '@/data/portfolioData'
 import { fadeInUp } from '@/lib/motion'
 import { useTheme } from '@/components/ThemeProvider'
