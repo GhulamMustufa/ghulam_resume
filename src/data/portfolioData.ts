@@ -230,7 +230,7 @@ export const experiences: Experience[] = [
   {
     role: 'Senior Software Engineer',
     company: 'Lumida Wealth',
-    period: 'Aug 2025 – May 2026',
+    period: 'Aug 2025 – Jun 2026',
     mode: 'Remote · Full-time',
     highlight: 'AI-powered wealth management SaaS · High-net-worth US investor platform',
     outcomes: [
