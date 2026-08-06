@@ -216,9 +216,21 @@ export const skillGroups: SkillGroup[] = [
 /* 6 roles — Cloud Coherence and Independent Clients removed to match resume focus */
 export const experiences: Experience[] = [
   {
+    role: 'Senior Full-Stack & AI Engineer',
+    company: 'Early-Stage Startups',
+    period: 'Jun 2026 – Present',
+    mode: 'Contract / Consulting · Remote',
+    highlight: 'Architecting web apps, SaaS products, and AI integrations for growth businesses',
+    outcomes: [
+      'Developing scalable web and mobile solutions using React, Next.js, Node.js, NestJS, TypeScript, and AWS.',
+      'Integrating LLMs, RAG workflows, and custom AI APIs into existing product ecosystems.',
+      'Partnering with founders and engineering teams on architecture, performance optimization, and product roadmaps.',
+    ],
+  },
+  {
     role: 'Senior Software Engineer',
     company: 'Lumida Wealth',
-    period: 'Aug 2025 – Present',
+    period: 'Aug 2025 – May 2026',
     mode: 'Remote · Full-time',
     highlight: 'AI-powered wealth management SaaS · High-net-worth US investor platform',
     outcomes: [
