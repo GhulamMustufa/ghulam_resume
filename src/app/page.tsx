@@ -1,4 +1,5 @@
 import { HeroSection } from '@/sections/HeroSection'
+import { IntroVideoSection } from '@/sections/IntroVideoSection'
 import { AchievementsSection } from '@/sections/AchievementsSection'
 import { ProjectsSection } from '@/sections/ProjectsSection'
 import { ServicesSection } from '@/sections/ServicesSection'
@@ -13,6 +14,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <IntroVideoSection />
       <AchievementsSection />
       <ProjectsSection />
       <ServicesSection />
