@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 import Link from 'next/link'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { services } from '@/data/portfolioData'
@@ -25,6 +26,7 @@ export function ServicesSection() {
           >
             <Link
               href={`/services/${service.slug}`}
+              onClick={() => track('View Service', { service: service.title })}
               className="absolute inset-0 z-10 rounded-[inherit]"
               aria-label={`View details for ${service.title}`}
             />

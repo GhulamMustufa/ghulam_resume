@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 import { ArrowRight, Download, Terminal } from 'lucide-react'
 import { heroStats } from '@/data/portfolioData'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
@@ -67,6 +68,7 @@ export function HeroSection() {
             <motion.div variants={fadeInUp} className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#projects"
+                onClick={() => track('Click View Projects')}
                 className="accent-button inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold"
               >
                 View Projects
@@ -75,6 +77,7 @@ export function HeroSection() {
               <a
                 href="/resume.pdf"
                 download="Ghulam_Mustafa_Resume.pdf"
+                onClick={() => track('Download CV')}
                 className="subtle-button inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold"
               >
                 Download CV

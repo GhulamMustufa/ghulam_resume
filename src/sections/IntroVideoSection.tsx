@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 
 export function IntroVideoSection() {
   return (
@@ -19,6 +20,7 @@ export function IntroVideoSection() {
             preload="metadata"
             playsInline
             muted
+            onPlay={() => track('Play Intro Video')}
           >
             <source src="/intro_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.

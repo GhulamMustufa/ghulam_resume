@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 import { ArrowUpRight } from 'lucide-react'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -57,6 +58,7 @@ export function ProjectsSection() {
             {/* Full-card clickable overlay */}
             <Link
               href={`/projects/${project.slug}`}
+              onClick={() => track('View Project', { project: project.title })}
               className="absolute inset-0 z-10 rounded-[inherit]"
               aria-label={`View details for ${project.title}`}
             />

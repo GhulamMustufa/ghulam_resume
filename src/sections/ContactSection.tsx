@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { track } from '@vercel/analytics/react'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { contactActions, contactDetails, socialLinks } from '@/data/portfolioData'
 import { fadeInUp } from '@/lib/motion'
@@ -16,6 +17,7 @@ export function ContactSection() {
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email)
+      track('Copy Email')
       setCopiedEmail(true)
       window.setTimeout(() => setCopiedEmail(false), 1800)
     } catch {
@@ -68,6 +70,7 @@ export function ContactSection() {
               href={action.href}
               target={action.href.startsWith('http') ? '_blank' : undefined}
               rel={action.href.startsWith('http') ? 'noreferrer' : undefined}
+              onClick={() => track('Click Contact Action', { action: action.label })}
               className="cta-btn inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold"
             >
               <action.icon size={15} />
@@ -141,6 +144,7 @@ export function ContactSection() {
             href={action.href}
             target={action.href.startsWith('http') ? '_blank' : undefined}
             rel={action.href.startsWith('http') ? 'noreferrer' : undefined}
+            onClick={() => track('Click Contact Action', { action: action.label })}
             className="accent-button inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold"
           >
             <action.icon size={15} />
@@ -165,6 +169,7 @@ export function ContactSection() {
             href={detail.href}
             target={detail.href?.startsWith('http') ? '_blank' : undefined}
             rel={detail.href?.startsWith('http') ? 'noreferrer' : undefined}
+            onClick={() => track('Click Contact Detail', { detail: detail.label })}
             className="surface-card group flex h-full items-start gap-3 p-4"
           >
             <span
@@ -202,6 +207,7 @@ export function ContactSection() {
             href={social.href}
             target="_blank"
             rel="noreferrer"
+            onClick={() => track('Click Social Link', { platform: social.label })}
             className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-70"
             style={{ color: 'var(--color-text-secondary)' }}
           >
