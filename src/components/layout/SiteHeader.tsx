@@ -67,11 +67,11 @@ export function SiteHeader() {
     >
       <div className="flex items-center justify-between gap-4">
         {/* Logo / wordmark */}
-        <a href="#" className="flex shrink-0 items-center transition-opacity hover:opacity-80">
+        <Link href="/" className="flex shrink-0 items-center transition-opacity hover:opacity-80">
           <span className="text-mono text-base font-bold tracking-widest sm:text-lg" style={{ color: 'var(--color-text-main)' }}>
             GHULAM.DEV
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
@@ -121,13 +121,13 @@ export function SiteHeader() {
           )}
 
           {/* Hire Me CTA */}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="accent-button inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold"
           >
             Hire Me
             <ArrowRight size={12} />
-          </a>
+          </Link>
 
           {/* Mobile hamburger */}
           <button

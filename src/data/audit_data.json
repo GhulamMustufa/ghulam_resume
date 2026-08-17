@@ -1,0 +1,67 @@
+{
+  "dial911fordesign.com": {
+    "company_name": "DS&P Digital Marketing & PR Agency",
+    "domain": "dial911fordesign.com",
+    "performance_score": 47,
+    "metrics": {
+      "LCP": "7.0\u00a0s",
+      "FCP": "3.6\u00a0s",
+      "Speed Index": "10.6\u00a0s",
+      "Total Blocking Time": "530\u00a0ms",
+      "Cumulative Layout Shift": "0.001"
+    },
+    "scraped_at": "2026-08-17 22:00:51"
+  },
+  "vabulous.com": {
+    "company_name": "Vab Media Digital Agency, LLC",
+    "domain": "vabulous.com",
+    "performance_score": 49,
+    "metrics": {
+      "LCP": "12.6\u00a0s",
+      "FCP": "4.1\u00a0s",
+      "Speed Index": "12.2\u00a0s",
+      "Total Blocking Time": "320\u00a0ms",
+      "Cumulative Layout Shift": "0.078"
+    },
+    "scraped_at": "2026-08-17 22:01:38"
+  },
+  "mainstreetroi.com": {
+    "company_name": "Main Street ROI",
+    "domain": "mainstreetroi.com",
+    "performance_score": 37,
+    "metrics": {
+      "LCP": "8.5\u00a0s",
+      "FCP": "4.4\u00a0s",
+      "Speed Index": "9.7\u00a0s",
+      "Total Blocking Time": "940\u00a0ms",
+      "Cumulative Layout Shift": "0.016"
+    },
+    "scraped_at": "2026-08-17 22:02:16"
+  },
+  "clickmen.us": {
+    "company_name": "Clickmen\u2122 Digital Marketing Agency",
+    "domain": "clickmen.us",
+    "performance_score": 60,
+    "metrics": {
+      "LCP": "8.4\u00a0s",
+      "FCP": "3.9\u00a0s",
+      "Speed Index": "8.5\u00a0s",
+      "Total Blocking Time": "0\u00a0ms",
+      "Cumulative Layout Shift": "0"
+    },
+    "scraped_at": "2026-08-17 22:02:43"
+  },
+  "digital-marketing-usa.com": {
+    "company_name": "Organic Digital Marketing",
+    "domain": "digital-marketing-usa.com",
+    "performance_score": 60,
+    "metrics": {
+      "LCP": "2.7\u00a0s",
+      "FCP": "2.7\u00a0s",
+      "Speed Index": "10.2\u00a0s",
+      "Total Blocking Time": "730\u00a0ms",
+      "Cumulative Layout Shift": "0.137"
+    },
+    "scraped_at": "2026-08-17 22:04:50"
+  }
+}

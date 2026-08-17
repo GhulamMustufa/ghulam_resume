@@ -59,7 +59,7 @@ export function TrojanHeroSection({ urlCompany, data }: { urlCompany: string, da
             {/* Main headline */}
             <motion.div variants={fadeInUp} className="flex items-center gap-4 mb-4">
                {/* eslint-disable-next-line @next/next/no-img-element */}
-               <img src={`https://logo.clearbit.com/${domain}`} alt={`${companyName} Logo`} className="w-16 h-16 rounded-xl shadow-lg border border-gray-700/50 bg-white object-contain p-2" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+               <img src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`} alt={`${companyName} Logo`} className="w-16 h-16 rounded-xl shadow-lg border border-gray-700/50 bg-white object-contain p-2" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
                <h1 className="text-display font-bold" style={{ color: 'var(--color-text-main)', letterSpacing: '-0.03em' }}>
                  Ghulam Mustafa <span className="text-gray-500">×</span> {companyName}
                </h1>
@@ -76,24 +76,24 @@ export function TrojanHeroSection({ urlCompany, data }: { urlCompany: string, da
             <motion.p
               variants={fadeInUp}
               className="text-body-lg mb-8 max-w-2xl"
-              style={{ color: 'var(--color-text-muted)' }}
+              style={{ color: 'var(--color-text-main)' }}
             >
               I saw your open role for {jobTitle}. As an independent contractor (zero visa or local tax friction), I can jump into your codebase immediately. Here is why I am the perfect fit for {companyName}:
             </motion.p>
             
             {data && (
-                <motion.div variants={fadeInUp} className="flex flex-col gap-4 mb-8 bg-black/20 p-5 rounded-xl border border-gray-800">
+                <motion.div variants={fadeInUp} className="flex flex-col gap-4 mb-8 p-5 rounded-xl border" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border-default)' }}>
                     <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
-                        <span className="text-gray-300 font-medium">{data.b1}</span>
+                        <span className="font-medium" style={{ color: 'var(--color-text-main)' }}>{data.b1}</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
-                        <span className="text-gray-300 font-medium">{data.b2}</span>
+                        <span className="font-medium" style={{ color: 'var(--color-text-main)' }}>{data.b2}</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
-                        <span className="text-gray-300 font-medium">{data.b3}</span>
+                        <span className="font-medium" style={{ color: 'var(--color-text-main)' }}>{data.b3}</span>
                     </div>
                 </motion.div>
             )}
@@ -108,7 +108,7 @@ export function TrojanHeroSection({ urlCompany, data }: { urlCompany: string, da
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track('Contact Started', { location: 'trojan_hero' })}
-                className="btn btn-primary inline-flex items-center gap-2 group text-sm sm:text-base px-6 py-3"
+                className="accent-button inline-flex items-center gap-2 group text-sm sm:text-base px-6 py-3"
               >
                 Book 15-Min Intro Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
