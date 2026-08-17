@@ -2,18 +2,24 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: { domain: string } }) {
+type Props = {
+  params: Promise<{ domain: string }>
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { domain } = await params;
   return {
-    title: `Technical Audit: ${params.domain} | Ghulam Mustafa`,
-    description: `A custom Google PageSpeed performance audit for ${params.domain}.`,
+    title: `Technical Audit: ${domain} | Ghulam Mustafa`,
+    description: `A custom Google PageSpeed performance audit for ${domain}.`,
   };
 }
 
-export default function AuditPage({ params }: { params: { domain: string } }) {
-  const { domain } = params;
+export default async function AuditPage({ params }: Props) {
+  const { domain } = await params;
   
   // Read the JSON database dynamically on the server
   const dataPath = path.join(process.cwd(), 'src/data/audit_data.json');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let auditDb: any = {};
   
   try {
@@ -64,7 +70,7 @@ export default function AuditPage({ params }: { params: { domain: string } }) {
           Performance Audit for <span style={{ color: 'var(--color-accent-blue-text)' }}>{audit.company_name}</span>
         </h1>
         <p className="text-body-lg max-w-3xl mt-6" style={{ color: 'var(--color-text-secondary)' }}>
-          We ran <span className="text-mono px-2 py-1 rounded-md" style={{ background: 'var(--color-bg-subtle)', color: 'var(--color-text-main)' }}>{audit.domain}</span> through Google's official PageSpeed Insights engine on a simulated mobile connection. Here are your Core Web Vitals.
+          We ran <span className="text-mono px-2 py-1 rounded-md" style={{ background: 'var(--color-bg-subtle)', color: 'var(--color-text-main)' }}>{audit.domain}</span> through Google&apos;s official PageSpeed Insights engine on a simulated mobile connection. Here are your Core Web Vitals.
         </p>
       </div>
 
@@ -116,7 +122,7 @@ export default function AuditPage({ params }: { params: { domain: string } }) {
         
         <div className="text-body-lg max-w-none mb-10 space-y-4" style={{ color: 'var(--color-text-secondary)' }}>
           <p>
-            According to Google's official consumer data, <strong style={{ color: 'var(--color-text-main)' }}>53% of mobile site visits are abandoned</strong> if a page takes longer than 3 seconds to load. 
+            According to Google&apos;s official consumer data, <strong style={{ color: 'var(--color-text-main)' }}>53% of mobile site visits are abandoned</strong> if a page takes longer than 3 seconds to load. 
           </p>
           {score < 90 && (
             <p className="text-red-400 font-medium">

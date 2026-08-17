@@ -8,7 +8,7 @@ import { navItems } from '@/data/portfolioData'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useTheme } from '@/components/ThemeProvider'
-import type { ThemeName } from '@/types/theme'
+
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)

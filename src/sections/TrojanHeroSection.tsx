@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+
 import { motion } from 'framer-motion'
 import { track } from '@vercel/analytics/react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
