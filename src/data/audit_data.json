@@ -63,5 +63,135 @@
       "Cumulative Layout Shift": "0.137"
     },
     "scraped_at": "2026-08-17 22:04:50"
+  },
+  "mitremedia.com": {
+    "company_name": "Mitre Media",
+    "domain": "mitremedia.com",
+    "performance_score": 34,
+    "metrics": {
+      "LCP": "7.9 s",
+      "FCP": "5.6 s",
+      "Speed Index": "7.9 s",
+      "Total Blocking Time": "1078 ms",
+      "Cumulative Layout Shift": "0.194"
+    },
+    "scraped_at": "2026-08-18 00:03:17"
+  },
+  "lemonio.com": {
+    "company_name": "Lemon.io",
+    "domain": "lemonio.com",
+    "performance_score": 63,
+    "metrics": {
+      "LCP": "7.8 s",
+      "FCP": "5.1 s",
+      "Speed Index": "11.4 s",
+      "Total Blocking Time": "856 ms",
+      "Cumulative Layout Shift": "0.078"
+    },
+    "scraped_at": "2026-08-18 00:03:18"
+  },
+  "thesecuritycentrelimited.com": {
+    "company_name": "The Security Centre Limited.",
+    "domain": "thesecuritycentrelimited.com",
+    "performance_score": 62,
+    "metrics": {
+      "LCP": "10.7 s",
+      "FCP": "4.1 s",
+      "Speed Index": "7.5 s",
+      "Total Blocking Time": "506 ms",
+      "Cumulative Layout Shift": "0.201"
+    },
+    "scraped_at": "2026-08-18 00:03:19"
+  },
+  "toptal.com": {
+    "company_name": "Toptal",
+    "domain": "toptal.com",
+    "performance_score": 65,
+    "metrics": {
+      "LCP": "11.9 s",
+      "FCP": "3.3 s",
+      "Speed Index": "8.5 s",
+      "Total Blocking Time": "1048 ms",
+      "Cumulative Layout Shift": "0.221"
+    },
+    "scraped_at": "2026-08-18 00:03:20"
+  },
+  "samsara.com": {
+    "company_name": "Samsara",
+    "domain": "samsara.com",
+    "performance_score": 59,
+    "metrics": {
+      "LCP": "10.8 s",
+      "FCP": "5.7 s",
+      "Speed Index": "8.8 s",
+      "Total Blocking Time": "772 ms",
+      "Cumulative Layout Shift": "0.235"
+    },
+    "scraped_at": "2026-08-18 00:03:21"
+  },
+  "collaborationai.com": {
+    "company_name": "Collaboration.Ai",
+    "domain": "collaborationai.com",
+    "performance_score": 41,
+    "metrics": {
+      "LCP": "6.9 s",
+      "FCP": "3.7 s",
+      "Speed Index": "13.5 s",
+      "Total Blocking Time": "1014 ms",
+      "Cumulative Layout Shift": "0.228"
+    },
+    "scraped_at": "2026-08-18 00:03:22"
+  },
+  "vercel.com": {
+    "company_name": "Vercel",
+    "domain": "vercel.com",
+    "performance_score": 45,
+    "metrics": {
+      "LCP": "8.6 s",
+      "FCP": "4.3 s",
+      "Speed Index": "12.2 s",
+      "Total Blocking Time": "528 ms",
+      "Cumulative Layout Shift": "0.116"
+    },
+    "scraped_at": "2026-08-18 00:03:23"
+  },
+  "stripe.com": {
+    "company_name": "Stripe",
+    "domain": "stripe.com",
+    "performance_score": 36,
+    "metrics": {
+      "LCP": "5.4 s",
+      "FCP": "3.6 s",
+      "Speed Index": "11.7 s",
+      "Total Blocking Time": "216 ms",
+      "Cumulative Layout Shift": "0.126"
+    },
+    "scraped_at": "2026-08-18 00:40:47"
+  },
+  "airbnb.com": {
+    "company_name": "Airbnb",
+    "domain": "airbnb.com",
+    "performance_score": 44,
+    "metrics": {
+      "LCP": "10.0 s",
+      "FCP": "4.9 s",
+      "Speed Index": "10.2 s",
+      "Total Blocking Time": "215 ms",
+      "Cumulative Layout Shift": "0.154"
+    },
+    "scraped_at": "2026-08-18 00:40:49"
+  },
+  "tesla.com": {
+    "company_name": "Tesla",
+    "domain": "tesla.com",
+    "performance_score": 53,
+    "metrics": {
+      "LCP": "9.8 s",
+      "FCP": "3.6 s",
+      "Speed Index": "11.2 s",
+      "Total Blocking Time": "394 ms",
+      "Cumulative Layout Shift": "0.154"
+    },
+    "scraped_at": "2026-08-18 00:40:50"
   }
 }

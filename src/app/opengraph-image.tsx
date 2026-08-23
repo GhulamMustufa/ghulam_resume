@@ -159,7 +159,7 @@ export default function Image() {
               letterSpacing: '0.3px',
             }}
           >
-            resume-ghulam.vercel.app
+            ghulam-mustafa.com
           </div>
         </div>
       </div>
