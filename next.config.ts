@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         destination: 'https://wa.me/923087015957',
         permanent: true,
       },
+      {
+        source: '/comaudit/:domain',
+        destination: '/audit/:domain',
+        permanent: true,
+      },
     ]
   },
 }
