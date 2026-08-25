@@ -193,5 +193,44 @@
       "Cumulative Layout Shift": "0.154"
     },
     "scraped_at": "2026-08-18 00:40:50"
+  },
+  "rainfocus.com": {
+    "company_name": "RainFocus",
+    "domain": "rainfocus.com",
+    "performance_score": 49,
+    "metrics": {
+      "LCP": "10.8 s",
+      "FCP": "3.3 s",
+      "Speed Index": "10.9 s",
+      "Total Blocking Time": "902 ms",
+      "Cumulative Layout Shift": "0.209"
+    },
+    "scraped_at": "2026-08-25 09:14:30"
+  },
+  "zenarahealth.com": {
+    "company_name": "Zenara Health",
+    "domain": "zenarahealth.com",
+    "performance_score": 53,
+    "metrics": {
+      "LCP": "7.6 s",
+      "FCP": "5.5 s",
+      "Speed Index": "9.0 s",
+      "Total Blocking Time": "1032 ms",
+      "Cumulative Layout Shift": "0.114"
+    },
+    "scraped_at": "2026-08-25 09:14:31"
+  },
+  "reveleer.com": {
+    "company_name": "Reveleer",
+    "domain": "reveleer.com",
+    "performance_score": 30,
+    "metrics": {
+      "LCP": "5.5 s",
+      "FCP": "3.7 s",
+      "Speed Index": "8.5 s",
+      "Total Blocking Time": "1022 ms",
+      "Cumulative Layout Shift": "0.207"
+    },
+    "scraped_at": "2026-08-25 09:14:32"
   }
 }
