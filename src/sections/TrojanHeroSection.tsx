@@ -104,7 +104,7 @@ export function TrojanHeroSection({ urlCompany, data }: { urlCompany: string, da
               className="flex flex-wrap items-center gap-4"
             >
               <a
-                href="https://cal.com/ghulammustafa"
+                href="https://cal.com/ghulam-mustafa-ecxxcu/15min"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track('Contact Started', { location: 'trojan_hero' })}

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/cal',
-        destination: 'https://cal.com/ghulammustafa',
+        destination: 'https://cal.com/ghulam-mustafa-ecxxcu/15min',
         permanent: true,
       },
       {
