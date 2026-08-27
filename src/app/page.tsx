@@ -10,6 +10,12 @@ import { TestimonialsSection } from '@/sections/TestimonialsSection'
 import { AIFocusSection } from '@/sections/AIFocusSection'
 import { ContactSection } from '@/sections/ContactSection'
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
+
 export default function HomePage() {
   return (
     <>

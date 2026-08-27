@@ -338,13 +338,31 @@ export const education: Education[] = [
 export const testimonials: Testimonial[] = [
   {
     quote:
+      'Ghulam showed strong senior-level expertise in React Native and JavaScript. He maintained our code standards, handled edge cases, and ensured the module worked seamlessly with our backend APIs. Professional communication.',
+    author: 'React Native Dev Needed to Build Small App Module',
+    rating: 5.0,
+    platform: 'Upwork',
+  },
+  {
+    quote:
+      'Fixed critical React/Node issues and improved app performance significantly! Code quality and problem-solving were top-notch. Delivered on time and exceeded expectations.',
+    author: 'Full-Stack Dev to Fix & Improve Part of React/Node App',
+    rating: 5.0,
+    platform: 'Upwork',
+  },
+  {
+    quote:
       'Very responsive to communication. Delivery was well within expectations. He made prudent suggestions that improved the app. Quality was excellent.',
     author: 'sheppardta — US Client',
+    rating: 5.0,
+    platform: 'Fiverr',
   },
   {
     quote:
       'After a pleasant previous experience I returned with more work. Delivery was quick and quality was good. Recommend.',
     author: 'harrycollin — UK Client',
+    rating: 5.0,
+    platform: 'Fiverr',
   },
 ]
 

@@ -11,8 +11,27 @@ export function generateStaticParams() {
   }))
 }
 
+import { Metadata } from 'next'
+
 type Props = {
   params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug)
+
+  if (!project) {
+    return {}
+  }
+
+  return {
+    title: `${project.title} | Ghulam Mustafa`,
+    description: project.problem,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+  }
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -23,8 +42,29 @@ export default async function ProjectPage({ params }: Props) {
     notFound()
   }
 
+  const appSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: project.title,
+    applicationCategory: project.category,
+    operatingSystem: 'Web, iOS, Android',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    author: {
+      '@type': 'Person',
+      name: 'Ghulam Mustafa'
+    }
+  }
+
   return (
     <div className="pt-8 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+      />
       <div className="mb-8">
         <Link 
           href="/" 
@@ -74,6 +114,7 @@ export default async function ProjectPage({ params }: Props) {
               alt={project.title}
               fill
               className="object-cover object-center"
+              priority
             />
           )}
         </div>

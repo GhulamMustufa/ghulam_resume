@@ -58,6 +58,19 @@ export default async function ServicePage({ params }: Props) {
     }))
   } : null
 
+  // Generate Service JSON-LD Schema
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    provider: {
+      '@type': 'Person',
+      name: 'Ghulam Mustafa'
+    },
+    serviceType: service.title
+  }
+
   return (
     <div className="pt-8 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {faqSchema && (
@@ -66,6 +79,10 @@ export default async function ServicePage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
       <div className="mb-8">
         <Link 

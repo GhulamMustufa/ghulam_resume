@@ -10,6 +10,23 @@ import { AIFocusSection } from '@/sections/AIFocusSection'
 import { ContactSection } from '@/sections/ContactSection'
 import { TrojanHeroSection } from '@/sections/TrojanHeroSection'
 
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ company: string }> 
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  return {
+    title: `Proposal for ${resolvedParams.company} | Ghulam Mustafa`,
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
+}
+
 export default async function TrojanPage({ 
   params, 
   searchParams 

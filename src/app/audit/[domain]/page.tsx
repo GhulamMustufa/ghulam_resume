@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{ domain: string }>
@@ -11,6 +11,10 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `Technical Audit: ${domain} | Ghulam Mustafa`,
     description: `A custom Google PageSpeed performance audit for ${domain}.`,
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 
@@ -32,15 +36,7 @@ export default async function AuditPage({ params }: Props) {
   const audit = auditDb[domain];
   
   if (!audit) {
-    return (
-      <div className="py-24 text-center">
-        <h1 className="text-4xl font-bold text-red-500 mb-4">Audit Not Found</h1>
-        <p className="text-[var(--color-text-secondary)] mb-8">We could not find a pre-generated audit for <span className="font-mono text-[var(--color-text-main)]">{domain}</span>.</p>
-        <Link href="/" className="accent-button px-6 py-3 font-medium inline-block">
-          Return to Portfolio
-        </Link>
-      </div>
-    );
+    notFound();
   }
   
   const score = audit.performance_score;

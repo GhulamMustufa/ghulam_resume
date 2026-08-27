@@ -65,9 +65,7 @@ export const metadata: Metadata = {
     },
     description: 'Senior engineer · React · Node.js · AI · Open to senior remote roles',
   },
-  alternates: {
-    canonical: '/',
-  },
+
   icons: {
     icon: [
       { url: '/icon-light.png', media: '(prefers-color-scheme: light)' },

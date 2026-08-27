@@ -71,6 +71,8 @@ export type Education = {
 export type Testimonial = {
   quote: string
   author: string
+  rating?: number
+  platform?: string
 }
 
 export type SocialLink = {
