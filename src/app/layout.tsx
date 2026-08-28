@@ -158,7 +158,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </ThemeProvider>
         <DynamicScrollToTop />
+        
+        {/* Vercel Analytics (Standard First-Party Analytics) */}
         <Analytics />
+        
+        {/* 
+          10x Ad-Blocker Bypass Analytics (Self-Hosted Umami/Plausible).
+          Once your VPS is running, uncomment this script. 
+          Ad-blockers won't block it because it requests a local asset '/assets/ui-metrics.js' 
+          and sends data to a local API route '/api/ui-metrics/send', both of which are 
+          secretly rewritten by next.config.ts to your stats.ghulam-mustafa.com server!
+        */}
+        {/* <script defer src="/assets/ui-metrics.js" data-website-id="your-uuid-here" data-host-url="/api/ui-metrics/send"></script> */}
       </body>
     </html>
   )

@@ -1,6 +1,21 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return [
+      {
+        // We mask the analytics script as a generic internal asset
+        source: '/assets/ui-metrics.js',
+        // In the future, you will point this to your actual VPS IP or stats subdomain
+        destination: 'https://stats.ghulam-mustafa.com/script.js',
+      },
+      {
+        // We mask the tracking endpoint as a standard internal API
+        source: '/api/ui-metrics/send',
+        destination: 'https://stats.ghulam-mustafa.com/api/send',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
