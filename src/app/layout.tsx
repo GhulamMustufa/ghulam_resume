@@ -87,7 +87,7 @@ const jsonLd = {
       name: 'Ghulam Mustafa',
       jobTitle: 'Product-Minded AI, SaaS & Mobile Engineer',
       url: SITE_URL,
-      email: 'ghulammustafa.mf@gmail.com',
+      email: 'hello@ghulam-mustafa.com',
       sameAs: [
         'https://github.com/GhulamMustufa',
         'https://www.linkedin.com/in/ghulam909',

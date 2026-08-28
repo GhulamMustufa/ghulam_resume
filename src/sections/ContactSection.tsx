@@ -12,7 +12,7 @@ import { ContactForm } from '@/components/ui/ContactForm'
 export function ContactSection() {
   const [copiedEmail, setCopiedEmail] = useState(false)
   const { theme } = useTheme()
-  const email = 'ghulammustafa.mf@gmail.com'
+  const email = 'hello@ghulam-mustafa.com'
   const isLightPremium = theme === 'light-premium'
 
   const handleCopyEmail = async () => {

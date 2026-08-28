@@ -14,7 +14,10 @@ export async function GET() {
       name: 'Ghulam Mustafa',
       title: 'Senior Full-Stack & AI Engineer',
       email: contactDetails.find((c) => c.label === 'Email')?.value,
-      phone: contactDetails.find((c) => c.label === 'WhatsApp')?.value,
+      phone: {
+        primary: contactDetails.find((c) => c.label === 'WhatsApp (MY)')?.value,
+        secondary: contactDetails.find((c) => c.label === 'WhatsApp (PK)')?.value,
+      },
       socials: socialLinks.map((link) => ({
         platform: link.label,
         url: link.href,

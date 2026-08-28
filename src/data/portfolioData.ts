@@ -367,20 +367,28 @@ export const testimonials: Testimonial[] = [
 ]
 
 export const contactActions: ContactAction[] = [
-  { label: 'Email Me', href: 'mailto:ghulammustafa.mf@gmail.com', icon: Mail },
+  { label: 'Email Me', href: 'mailto:hello@ghulam-mustafa.com', icon: Mail },
+  { label: 'WhatsApp (MY)', href: 'https://wa.me/60148130908', icon: Phone },
+  { label: 'WhatsApp (PK)', href: 'https://wa.me/923087015957', icon: Phone },
   { label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/ghulam909', icon: ExternalLink },
 ]
 
 export const contactDetails: ContactDetail[] = [
   {
     label: 'Email',
-    value: 'ghulammustafa.mf@gmail.com',
-    href: 'mailto:ghulammustafa.mf@gmail.com',
+    value: 'hello@ghulam-mustafa.com',
+    href: 'mailto:hello@ghulam-mustafa.com',
     icon: Mail,
   },
   {
-    label: 'WhatsApp',
-    value: 'Message on WhatsApp',
+    label: 'WhatsApp (MY)',
+    value: '+60 14-813 0908',
+    href: 'https://wa.me/60148130908',
+    icon: Phone,
+  },
+  {
+    label: 'WhatsApp (PK)',
+    value: '+92 308-701 5957',
     href: 'https://wa.me/923087015957',
     icon: Phone,
   },

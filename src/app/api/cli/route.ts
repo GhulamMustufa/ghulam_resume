@@ -46,7 +46,7 @@ ${C.bold}${C.brightYellow}> TOP SKILLS${C.reset}
   ${C.green}AI & LLM:${C.reset} OpenAI API, Prompt Engineering, RAG, Streaming APIs
 
 ${C.bold}${C.brightYellow}> CONTACT & LINKS${C.reset}
-  Email:    ghulammustafa.mf@gmail.com
+  Email:    hello@ghulam-mustafa.com
   GitHub:   https://github.com/GhulamMustufa
   LinkedIn: https://www.linkedin.com/in/ghulam909
   JSON API: ${C.dim}curl ghulam-mustafa.com/api/v1/resume${C.reset}
