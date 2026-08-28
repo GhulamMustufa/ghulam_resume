@@ -25,7 +25,7 @@ TITLE:Senior Full-Stack & AI Engineer
 EMAIL;TYPE=INTERNET;TYPE=WORK:${email}
 TEL;TYPE=CELL;TYPE=PREF:${myPhone}
 TEL;TYPE=WORK:${pkPhone}
-URL:https://ghulam-mustafa.com
+URL:https://ghulam-mustafa.com/scanned
 URL:https://www.linkedin.com/in/ghulam909
 URL:https://github.com/GhulamMustufa
 END:VCARD`

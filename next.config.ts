@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/scanned',
+        destination: '/?ref=qr_vcard',
+        permanent: false, // false because we might want to change analytics tags later
+      },
+      {
         source: '/cal',
         destination: 'https://cal.com/ghulam-mustafa-ecxxcu/15min',
         permanent: true,
