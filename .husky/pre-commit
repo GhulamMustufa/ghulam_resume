@@ -1,0 +1,7 @@
+
+
+echo "🏃 Running TypeScript type checker..."
+npx tsc --noEmit
+
+echo "💅 Running ESLint on staged files..."
+npx lint-staged
