@@ -17,9 +17,13 @@ export type Project = {
   slug: string
   title: string
   category: string
-  problem: string
-  solution: string
-  result: string
+  problem: React.ReactNode
+  solution: React.ReactNode
+  result: React.ReactNode
+  shortProblem?: string
+  shortSolution?: string
+  shortResult?: string
+  seoDescription?: string
   metrics: string[]
   stack: string[]
   url?: string

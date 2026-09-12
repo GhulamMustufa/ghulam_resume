@@ -120,9 +120,9 @@ export function ProjectsSection() {
             {/* Problem / Solution / Result stack */}
             <div className="flex flex-col gap-4 text-xs sm:text-sm">
               {[
-                { label: 'PROBLEM', text: project.problem },
-                { label: 'SOLUTION', text: project.solution },
-                { label: 'RESULT', text: project.result },
+                { label: 'PROBLEM', text: project.shortProblem || project.problem },
+                { label: 'SOLUTION', text: project.shortSolution || project.solution },
+                { label: 'RESULT', text: project.shortResult || project.result },
               ].map(({ label, text }) => (
                 <div key={label}>
                   <p
@@ -135,7 +135,7 @@ export function ProjectsSection() {
                   >
                     {label}
                   </p>
-                  <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>{text}</p>
+                  <div style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6, fontSize: '0.875rem' }}>{text}</div>
                 </div>
               ))}
             </div>

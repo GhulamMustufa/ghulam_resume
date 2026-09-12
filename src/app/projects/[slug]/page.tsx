@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.title} | Ghulam Mustafa`,
-    description: project.problem,
+    description: project.seoDescription || (typeof project.problem === 'string' ? project.problem : `Case study for ${project.title}`),
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
@@ -126,21 +126,21 @@ export default async function ProjectPage({ params }: Props) {
             <h2 className="text-mono mb-3 font-semibold" style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', letterSpacing: '0.12em' }}>
               PROBLEM
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.problem}</p>
+            <div style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.problem}</div>
           </section>
           
           <section>
             <h2 className="text-mono mb-3 font-semibold" style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', letterSpacing: '0.12em' }}>
               SOLUTION
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.solution}</p>
+            <div style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.solution}</div>
           </section>
           
           <section>
             <h2 className="text-mono mb-3 font-semibold" style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', letterSpacing: '0.12em' }}>
               RESULT
             </h2>
-            <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.result}</p>
+            <div style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>{project.result}</div>
           </section>
         </div>
 

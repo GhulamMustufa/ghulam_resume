@@ -69,6 +69,136 @@ export const keyAchievements: Achievement[] = [
 
 export const projects: Project[] = [
   {
+    slug: 'devfix',
+    title: 'DevFix 🛠️',
+    category: 'Autonomous AI Agent',
+    problem: (
+      <div className="flex flex-col gap-4">
+        <p>The dreaded <i>&quot;It works on my machine&quot;</i> syndrome. When a developer clones a repository and the build fails due to missing dependencies, cryptic errors, or lockfile mismatches, they spend hours Googling stack traces.</p>
+        <p>Existing AI tools like Copilot fail here because they rely purely on text generation, guessing the fix without proving it works. Giving an AI access to run arbitrary bash commands on your host laptop to test its fix is incredibly dangerous.</p>
+      </div>
+    ),
+    solution: (
+      <div className="flex flex-col gap-4">
+        <p>Built <strong>DevFix</strong>, an open-source agentic workflow available via NPM that detects, diagnoses, and fixes broken environments autonomously.</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Self-Verifying Deterministic Layer:</strong> DevFix runs your test suite (<code>npm run build</code>). The agent only completes its task when the environment proves the fix works.</li>
+          <li><strong>Isolated Sandboxing:</strong> All AI execution runs inside a secure, ephemeral Docker container to protect the host machine.</li>
+        </ul>
+        <div className="mt-4 p-4 rounded-lg bg-[var(--color-bg-subtle)] border border-[var(--color-border-default)]">
+          <p className="font-mono text-xs text-[var(--color-text-muted)] mb-3">ARCHITECTURE: Sandboxed Verification Loop</p>
+          <div className="flex flex-col gap-2 font-mono text-sm">
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> User runs <code>devfix fix .</code></div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> Spins up ephemeral Docker sandbox</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> Agent loop patches files & runs shell</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">↻</span> <strong>Deterministic Verifier</strong> checks build success</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">✓</span> Fix extracted to host machine</div>
+          </div>
+        </div>
+      </div>
+    ),
+    result: (
+      <div className="flex flex-col gap-4">
+        <p>Achieved an <strong>80% autonomous recovery rate</strong> on a rigorous 10-case failure benchmark of severely broken environments (dependency clashes, lockfile errors, missing env vars).</p>
+        <p>Proved a massive AI thesis: Giving an LLM a massive token context window is useless for debugging local dependencies. Verification is infinitely more important than generation.</p>
+      </div>
+    ),
+    shortProblem: "The dreaded 'It works on my machine' syndrome. Existing AI tools guess fixes instead of verifying them.",
+    shortSolution: "Built an open-source agentic workflow that executes fixes in a secure Docker sandbox and actively verifies build success.",
+    shortResult: "Achieved an 80% autonomous recovery rate on severely broken local development environments.",
+    metrics: ['80% autonomous recovery rate', '10-case rigorous benchmark', 'Docker Sandboxing', 'Self-Verifying Agent'],
+    stack: ['TypeScript', 'Node.js', 'Docker', 'OpenAI API', 'Bash/Shell Automation'],
+    url: 'https://devfix.ghulam-mustafa.com',
+    image: '/projects/devfix.png',
+  },
+  {
+    slug: 'omnibid',
+    title: 'OmniBid Intelligence Engine',
+    category: 'AI Pipeline & SaaS',
+    problem: (
+      <div className="flex flex-col gap-4">
+        <p>Finding good freelance jobs on platforms like Upwork is exhausting. Many jobs are scams, have insulting budgets, or use legacy technologies. Applying to them wastes hours of time and real money (Connects).</p>
+        <p>Standard AI models are prone to hallucination—if a client posts a job without a budget, standard LLMs will confidently guess or invent details instead of flagging missing data.</p>
+      </div>
+    ),
+    solution: (
+      <div className="flex flex-col gap-4">
+        <p>Built <strong>OmniBid</strong>, an autonomous AI pipeline that ingests job alerts, filters out scams, and drafts hyper-personalized proposals. It operates on a strict rule: <strong>Code enforces boundaries; the AI only reasons.</strong></p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Deterministic Gates:</strong> Code automatically blocks scams and bad budgets before the AI is even called, preventing prompt injection attacks.</li>
+          <li><strong>Confidence Calibration:</strong> Forces the AI to output <code>MAYBE</code> and downgrade its confidence score if critical job details are missing.</li>
+          <li><strong>Claim Verifier:</strong> Anti-hallucination layer checks every proposed sentence against a frozen snapshot of the freelancer&apos;s real profile.</li>
+        </ul>
+        <div className="mt-4 p-4 rounded-lg bg-[var(--color-bg-subtle)] border border-[var(--color-border-default)]">
+          <p className="font-mono text-xs text-[var(--color-text-muted)] mb-3">ARCHITECTURE: Anti-Hallucination Pipeline</p>
+          <div className="flex flex-col gap-2 font-mono text-sm">
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> Job Alert Ingestion</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> <strong>Deterministic Gates</strong> (Blocks scams/low budgets instantly)</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> LLM Reasoning Engine</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> Confidence Calibrator (Downgrades vague jobs)</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">✓</span> Claim Verifier (Strips hallucinations)</div>
+          </div>
+        </div>
+      </div>
+    ),
+    result: (
+      <div className="flex flex-col gap-4">
+        <p>Developed a 28-Job &quot;Golden Benchmark Suite&quot; to ruthlessly test the AI against real-world scams and injection attacks.</p>
+        <p>Achieved <strong>96.4% Decision Accuracy</strong> (27/28 correct), with a <strong>100% block rate</strong> against prompt injection and scam jobs. Execution time averages 7.9 seconds per job.</p>
+      </div>
+    ),
+    shortProblem: "Finding freelance jobs is exhausting. Many jobs are scams, have bad budgets, and standard LLMs hallucinate missing job details.",
+    shortSolution: "Built an autonomous AI pipeline with strict deterministic gates to block scams and an anti-hallucination claim verifier.",
+    shortResult: "Achieved 96.4% decision accuracy on a 28-job Golden Benchmark Suite with 100% scam rejection.",
+    metrics: ['96.4% Decision Accuracy', '100% Scam Rejection', '7.9s Average Run Time', 'Zero Hallucinations'],
+    stack: ['Next.js 16', 'TypeScript', 'Prisma', 'SQLite', 'MCP'],
+    url: 'https://omnibid.ghulam-mustafa.com',
+    image: '/projects/omnibid.jpg',
+  },
+  {
+    slug: 'borderless-ai',
+    title: 'Borderless AI Copilot',
+    category: 'Full-Stack RAG Product',
+    problem: (
+      <div className="flex flex-col gap-4">
+        <p>Immigration rules are overly complex, constantly changing, and vary drastically across 70+ countries. Finding out which visas you qualify for requires hiring expensive lawyers, and most free online assessments are lead-generation scams.</p>
+      </div>
+    ),
+    solution: (
+      <div className="flex flex-col gap-4">
+        <p>Built an evidence-grounded immigration copilot combining <strong>deterministic eligibility scoring</strong> with <strong>RAG (Retrieval-Augmented Generation)</strong>.</p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Deterministic Rules Engine:</strong> Calculates exact points for systems like Canada&apos;s Express Entry or Germany&apos;s Chancenkarte based on hardcoded mathematical rules, not AI guesswork.</li>
+          <li><strong>RAG Chatbot:</strong> Vectorizes official government documents using Neon pgvector. The AI answers follow-up questions purely based on retrieved, official <code>.gov</code> and <code>.gc.ca</code> sources.</li>
+          <li><strong>What-If Simulator:</strong> Allows users to tweak their profile (e.g., increasing English score) and instantly recalculates global visa eligibility.</li>
+        </ul>
+        <div className="mt-4 p-4 rounded-lg bg-[var(--color-bg-subtle)] border border-[var(--color-border-default)]">
+          <p className="font-mono text-xs text-[var(--color-text-muted)] mb-3">ARCHITECTURE: Hybrid Scoring & RAG</p>
+          <div className="flex flex-col gap-2 font-mono text-sm">
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> User Profile Input</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> <strong>Deterministic Engine</strong> (Exact points calculated)</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> Neon pgvector retrieves official Gov docs</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">→</span> LLM injects context & explains next steps</div>
+            <div className="flex items-center gap-2"><span className="text-[var(--color-accent-blue-text)]">✓</span> Grounded Answer + Simulator Generation</div>
+          </div>
+        </div>
+      </div>
+    ),
+    result: (
+      <div className="flex flex-col gap-4">
+        <p>Successfully modeled 1,454 distinct visa pathways across 70+ countries into a unified mathematical scoring engine.</p>
+        <p>Launched a complete B2C SaaS product featuring Stripe monetization, Clerk authentication, and a scalable Next.js 14 architecture.</p>
+      </div>
+    ),
+    shortProblem: "Immigration rules are overly complex, constantly changing, and finding qualified visa pathways often requires expensive legal consultation.",
+    shortSolution: "Built a full-stack Next.js product combining deterministic mathematical scoring with a pgvector-powered RAG chatbot.",
+    shortResult: "Successfully modeled 1,454 distinct visa pathways across 70+ countries into a highly accurate rules engine.",
+    metrics: ['1,454 Visa Pathways Modeled', '70+ Countries', 'Deterministic + RAG Hybrid', 'Full SaaS Architecture'],
+    stack: ['Next.js 14', 'Neon (pgvector)', 'Clerk', 'Stripe', 'OpenAI'],
+    url: 'https://borderless.ghulam-mustafa.com',
+    image: '/projects/borderless.jpg',
+  },
+  {
     slug: 'lumida-wealth',
     title: 'Lumida Wealth Investor Platform',
     category: 'AI + Fintech SaaS',
@@ -127,36 +257,6 @@ export const projects: Project[] = [
     stack: ['Node.js', 'PostgreSQL', 'React Native', 'Crashlytics', 'AWS'],
     url: 'https://play.google.com/store/apps/details?id=com.dstgyr.dastgyr',
     image: '/projects/dastgyr.jpg',
-  },
-  {
-    slug: 'ai-visa-advisor',
-    title: 'AI Visa Advisor',
-    category: 'AI · Immigration Tech',
-    problem:
-      'Visa applicants rely on overly optimistic eligibility checkers that ignore real refusal rates — leading to wasted fees, failed applications, and false confidence going into the process.',
-    solution:
-      'Built an AI-powered scoring engine that cross-references 17 official government sources across 10 immigration regions. A structured questionnaire captures nationality, education, finances, and language scores; the model returns ranked pathway scores (0–100) with document checklists, timeline estimates, and actionable improvement recommendations.',
-    result:
-      'Transparent, calibrated assessments grounded in real refusal data. Each result shows exact point attribution (e.g. "Master\'s degree: +12 pts") so applicants know precisely what to improve before committing to a costly application.',
-    metrics: ['10 immigration regions', '17 government sources cited', '0–100 pathway scoring', 'Document checklist per pathway'],
-    stack: ['Next.js', 'OpenAI API', 'TypeScript', 'Vercel'],
-    url: 'https://ai-visa-advisor.vercel.app/',
-    image: '/projects/ai-visa.jpg',
-  },
-  {
-    slug: 'proposalio',
-    title: 'Proposalio — AI Proposal Generator',
-    category: 'AI · Freelance SaaS',
-    problem:
-      'On platforms like Upwork, articulate non-experts routinely beat more qualified freelancers — "better talkers beat better doers." Writing a targeted, personalised proposal for every job is time-consuming and inconsistent.',
-    solution:
-      'Built a full-stack SaaS with real-time streaming AI that generates job-targeted proposals in under 90 seconds. The system trains on the user\'s past proposals for voice matching, analyses job posts to lead with the most relevant experience, and ships with a proposal pipeline tracker, integrated job feed, and freemium monetisation.',
-    result:
-      'A complete freelance productivity tool in production — with Pro tier ($19/month), A/B proposal testing, live streaming output, and style-matched personalisation that sounds like the user, not a template.',
-    metrics: ['Sub-90s proposal generation', 'Real-time streaming output', 'Freemium + $19/mo Pro tier', 'Voice-matched personalisation'],
-    stack: ['Next.js', 'OpenAI API', 'TypeScript', 'Streaming', 'Vercel'],
-    url: 'https://ai-proposal-generator-chi.vercel.app/',
-    image: '/projects/proposalio.jpg',
   },
   {
     slug: 'satolearn',
