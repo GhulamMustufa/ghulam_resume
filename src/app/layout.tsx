@@ -56,6 +56,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     siteName: 'Ghulam Mustafa — Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ghulam Mustafa | Senior Software Engineer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -64,6 +72,7 @@ export const metadata: Metadata = {
       template: '%s | Ghulam Mustafa',
     },
     description: 'Senior Software Engineer building production-grade SaaS, web/mobile applications, backend systems, and AI-powered products across the full stack.',
+    images: ['/og-image.jpg'],
   },
 
   icons: {
