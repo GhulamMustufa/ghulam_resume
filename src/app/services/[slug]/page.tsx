@@ -1,12 +1,15 @@
 import { Metadata } from 'next'
 import { services, projects } from '@/data/portfolioData'
+import { seoServices } from '@/data/seoServices'
+
+const allServices = [...services, ...seoServices]
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, CheckCircle2 } from 'lucide-react'
 
 export function generateStaticParams() {
-  return services.map((service) => ({
+  return allServices.map((service) => ({
     slug: service.slug,
   }))
 }
@@ -17,7 +20,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const service = services.find((s) => s.slug === resolvedParams.slug)
+  const service = allServices.find((s) => s.slug === resolvedParams.slug)
 
   if (!service) {
     return {}
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServicePage({ params }: Props) {
   const resolvedParams = await params;
-  const service = services.find((s) => s.slug === resolvedParams.slug)
+  const service = allServices.find((s) => s.slug === resolvedParams.slug)
 
   if (!service) {
     notFound()

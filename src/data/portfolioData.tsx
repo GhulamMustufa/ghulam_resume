@@ -237,8 +237,8 @@ export const projects: Project[] = [
     solution:
       'Maintained and scaled the app with targeted UX redesigns, onboarding optimisations, and Sentry-based proactive error monitoring with structured incident response.',
     result:
-      '30% engagement growth and 99% uptime across thousands of daily B2B distributor transactions nationwide.',
-    metrics: ['30% engagement growth', '99% uptime', 'Thousands of daily transactions'],
+      '30% engagement growth and 99.9% uptime across thousands of daily B2B distributor transactions nationwide.',
+    metrics: ['30% engagement growth', '99.9% uptime', 'Thousands of daily transactions'],
     stack: ['React Native', 'Sentry', 'Mobile Performance Tuning'],
     url: 'https://play.google.com/store/apps/details?id=com.oscar_unilever_app&hl=en',
     image: '/projects/roll.jpg',
@@ -316,7 +316,7 @@ export const skillGroups: SkillGroup[] = [
 /* 6 roles — Cloud Coherence and Independent Clients removed to match resume focus */
 export const experiences: Experience[] = [
   {
-    role: 'Senior Full-Stack & AI Engineer',
+    role: 'Senior Software Engineer (Contract/Consulting)',
     company: 'Early-Stage Startups',
     period: 'Jun 2026 – Present',
     mode: 'Contract / Consulting · Remote',
@@ -362,7 +362,7 @@ export const experiences: Experience[] = [
     outcomes: [
       'Maintained and scaled Roll, Unilever\'s mission-critical retail ordering app processing thousands of B2B transactions daily across Pakistan\'s distributor network.',
       'Increased user engagement by 30% through targeted UX redesigns, onboarding flow optimisation, and performance-focused feature rollouts.',
-      'Sustained 99% app uptime via Sentry-based error monitoring, proactive error boundary implementation, and a structured incident response process.',
+      'Sustained 99.9% app uptime via Sentry-based error monitoring, proactive error boundary implementation, and a structured incident response process.',
     ],
   },
   {
@@ -378,7 +378,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    role: 'MERN Stack Developer',
+    role: 'Software Engineer',
     company: 'Inaequo Solutions',
     period: 'Jun 2021 – May 2022',
     mode: 'Full-time',
@@ -403,21 +403,21 @@ export const experiences: Experience[] = [
 
 export const aiFocus: AIFocusItem[] = [
   {
-    title: 'AI Features in Production',
+    title: 'AI Product Engineering',
     description:
-      'Shipping LLM-assisted investor experiences at Lumida Wealth — GPT-4 powered insights that convert raw portfolio data into actionable summaries for high-net-worth clients.',
+      'Building production-ready, autonomous AI pipelines and RAG workflows. Focused on deterministic gating, anti-hallucination layers, and verifiable outputs rather than thin API wrappers.',
     status: 'shipping',
   },
   {
-    title: 'AI-Native SaaS Architecture',
+    title: 'SaaS Architecture & Integration',
     description:
-      'Building repeatable patterns for prompt orchestration, response quality controls, and observability in production SaaS products — moving beyond demos to reliable AI systems.',
+      'Integrating LLMs deeply into Next.js and Node.js ecosystems. Architecting data sync, vector databases (pgvector), and seamless client-side streaming for B2B and B2C products.',
     status: 'active',
   },
   {
-    title: 'Experimental AI Products',
+    title: 'Agentic Workflows',
     description:
-      'Rapidly validating AI-assisted workflows for finance and operations use-cases to discover scalable product wedges with real user traction.',
+      'Developing tools and systems that allow AI agents to safely execute code, self-verify results, and automate complex developer workflows within sandboxed environments.',
     status: 'building',
   },
 ]
@@ -427,11 +427,6 @@ export const education: Education[] = [
     institute: 'DHA Suffa University',
     degree: 'B.S. Computer Science',
     years: '2015 – 2020',
-  },
-  {
-    institute: 'Bahria College Karsaz',
-    degree: 'Pre-Engineering (HSC)',
-    years: '2013 – 2015',
   },
 ]
 
@@ -687,6 +682,51 @@ export const services: Service[] = [
     faqs: [
       { question: 'How do you handle user subscriptions?', answer: 'I integrate Stripe Billing to manage complex SaaS tiers, prorations, and webhook events for provisioning and revoking access automatically.' },
       { question: 'Is the data architecture secure for multi-tenant SaaS?', answer: 'Yes, I implement strict Row-Level Security (RLS) in PostgreSQL or application-level tenant isolation to guarantee cross-tenant data privacy.' }
+    ]
+  },
+  {
+    slug: 'hire-react-native-developer',
+    title: 'Hire Senior React Native Developer',
+    description: 'Looking to hire a Senior React Native Developer? I architect offline-first, high-performance iOS and Android apps.',
+    tags: ['React Native', 'Hire Developer', 'Freelance', 'iOS', 'Android', 'Mobile Architect'],
+    icon: Smartphone,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Hire a React Native developer who ships production apps.',
+    capabilities: ['End-to-End App Development', 'Offline-First Architectures', 'Performance Audits', 'CI/CD Fastlane Setup'],
+    caseStudySlugs: ['udhaar-book', 'lumida-wealth'],
+    faqs: [
+      { question: 'Are you available for freelance React Native contracts?', answer: 'Yes, I am open to senior consulting and freelance contracts for React Native applications.' },
+      { question: 'Can you rescue a failing React Native project?', answer: 'Absolutely. I specialize in performance audits, upgrading legacy React Native versions, and fixing memory leaks in production apps.' }
+    ]
+  },
+  {
+    slug: 'ai-saas-developer',
+    title: 'AI SaaS Developer',
+    description: 'Build AI-powered SaaS MVPs and scale them to production with a specialized AI SaaS developer.',
+    tags: ['AI SaaS', 'MVP', 'GPT-4', 'Next.js', 'LLM Integration', 'SaaS Developer'],
+    icon: Sparkles,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Turn your AI SaaS vision into a scalable production product.',
+    capabilities: ['AI MVP Development', 'Prompt Orchestration', 'Multi-tenant SaaS', 'Stripe Integration'],
+    caseStudySlugs: ['borderless-ai', 'omnibid', 'devfix'],
+    faqs: [
+      { question: 'Can you build my AI SaaS MVP from scratch?', answer: 'Yes, I can architect the entire SaaS stack—from the Next.js frontend to the AI pipeline and Stripe subscription backend.' },
+      { question: 'How do you handle API costs for AI SaaS?', answer: 'I build caching layers and utilize token streaming to ensure your AI features remain cost-effective at scale.' }
+    ]
+  },
+  {
+    slug: 'remote-full-stack-engineer',
+    title: 'Remote Senior Full Stack Engineer (React & Node)',
+    description: 'Hire a remote Senior Full Stack Engineer specializing in React, Node.js, and TypeScript architectures.',
+    tags: ['Remote', 'Full Stack', 'React', 'Node.js', 'TypeScript', 'Senior Engineer'],
+    icon: Globe,
+    showOnHomepage: false,
+    metricDrivenHeader: 'A highly autonomous remote Senior Full Stack Engineer.',
+    capabilities: ['Remote Async Communication', 'System Design', 'Frontend & Backend Sync', 'Agile/Scrum Leadership'],
+    caseStudySlugs: ['saddar', 'lumida-wealth'],
+    faqs: [
+      { question: 'Do you work well in remote teams?', answer: 'Yes, I have extensive experience operating completely async, utilizing Slack, Jira, and detailed PR descriptions to maintain high velocity across timezones.' },
+      { question: 'What is your primary timezone overlap?', answer: 'While based in Asia, I frequently overlap with EU and US timezones, prioritizing async updates and scheduled syncs.' }
     ]
   }
 ]

@@ -34,7 +34,7 @@ export function HeroSection() {
               style={{ background: 'var(--color-accent-green-text)' }}
               aria-hidden="true"
             />
-            ● AVAILABLE FOR AI INFRASTRUCTURE ARCHITECTURE
+            ● AVAILABLE FOR SENIOR ENGINEERING ROLES
           </span>
         </motion.div>
 
@@ -50,9 +50,8 @@ export function HeroSection() {
             >
               Product-Minded{' '}
               <span style={{ color: 'var(--color-accent-blue-text)' }}>
-                AI, SaaS &amp; Mobile
-              </span>{' '}
-              Engineer.
+                Senior Software Engineer.
+              </span>
             </motion.h1>
 
             {/* Sub-description */}
@@ -61,7 +60,7 @@ export function HeroSection() {
               className="text-body-lg mt-4 max-w-2xl"
               style={{ color: 'var(--color-text-muted)' }}
             >
-              Building end-to-end SaaS products and high-performance mobile apps from 0 to 1. Specialising in integrating LLMs into real-world workflows, crafting premium UI, and scaling architectures that solve actual user problems.
+              Architecting production-grade applications across the full stack. I specialize in shipping high-performance React Native mobile apps, scalable Node.js backends, and integrating LLMs into real-world SaaS products.
             </motion.p>
 
             {/* CTAs */}

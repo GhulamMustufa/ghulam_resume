@@ -24,35 +24,35 @@ const SITE_URL = 'https://ghulam-mustafa.com'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+    default: 'Ghulam Mustafa | Senior Software Engineer | Web, Mobile & AI',
     template: '%s | Ghulam Mustafa',
   },
   description:
-    'Ghulam Mustafa — Senior Full-Stack & Mobile Engineer with 5+ years shipping production React, Node.js, and AI-integrated applications. Open to senior remote roles.',
+    'Senior Software Engineer building production-grade SaaS, web/mobile applications, backend systems, and AI-powered products across the full stack.',
   authors: [{ name: 'Ghulam Mustafa' }],
   keywords: [
     'Ghulam Mustafa',
-    'Senior Full-Stack Engineer',
-    'Senior React Native Developer',
+    'Hire Senior React Native Developer',
+    'Freelance Next.js SaaS Developer',
+    'Remote AI Integration Engineer Node.js',
+    'Build AI-powered SaaS MVP',
+    'Migrate React app to Next.js consultant',
+    'React Native offline architecture expert',
+    'Remote Senior Full Stack Engineer React Node',
+    'Senior Mobile Developer for early stage startup',
+    'Senior Software Engineer',
     'React Native Engineer',
     'Next.js Developer',
     'Node.js Developer',
-    'TypeScript Engineer',
     'AI Engineer',
-    'LLM Integration',
-    'SaaS Developer',
-    'Fintech Engineer',
-    'Remote Full-Stack Engineer',
-    'Remote React Native Developer',
-    'Remote Mobile Engineer',
   ],
   openGraph: {
     title: {
-      default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+      default: 'Ghulam Mustafa | Senior Software Engineer | Web, Mobile & AI',
       template: '%s | Ghulam Mustafa',
     },
     description:
-      'Senior engineer building AI-powered SaaS and high-performance web/mobile products. 5+ years · React · React Native · Node.js.',
+      'Senior Software Engineer building production-grade SaaS, web/mobile applications, backend systems, and AI-powered products across the full stack.',
     type: 'website',
     url: SITE_URL,
     siteName: 'Ghulam Mustafa — Portfolio',
@@ -60,10 +60,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: {
-      default: 'Ghulam Mustafa | Product-Minded AI, SaaS & Mobile Engineer',
+      default: 'Ghulam Mustafa | Senior Software Engineer | Web, Mobile & AI',
       template: '%s | Ghulam Mustafa',
     },
-    description: 'Senior engineer · React · Node.js · AI · Open to senior remote roles',
+    description: 'Senior Software Engineer building production-grade SaaS, web/mobile applications, backend systems, and AI-powered products across the full stack.',
   },
 
   icons: {
@@ -85,7 +85,7 @@ const jsonLd = {
     {
       '@type': 'Person',
       name: 'Ghulam Mustafa',
-      jobTitle: 'Product-Minded AI, SaaS & Mobile Engineer',
+      jobTitle: 'Senior Software Engineer | AI-Powered Products | Web & Mobile',
       url: SITE_URL,
       email: 'hello@ghulam-mustafa.com',
       sameAs: [
