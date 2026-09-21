@@ -109,7 +109,7 @@ export const projects: Project[] = [
     metrics: ['80% autonomous recovery rate', '10-case rigorous benchmark', 'Docker Sandboxing', 'Self-Verifying Agent'],
     stack: ['TypeScript', 'Node.js', 'Docker', 'OpenAI API', 'Bash/Shell Automation'],
     url: 'https://devfix.ghulam-mustafa.com',
-    image: '/projects/devfix.png',
+    image: '/projects/devfix.jpg',
   },
   {
     slug: 'omnibid',
