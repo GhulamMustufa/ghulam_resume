@@ -8,6 +8,7 @@ import { ExperienceSection } from '@/sections/ExperienceSection'
 import { EducationSection } from '@/sections/EducationSection'
 import { TestimonialsSection } from '@/sections/TestimonialsSection'
 import { AIFocusSection } from '@/sections/AIFocusSection'
+import { FAQSection } from '@/sections/FAQSection'
 import { ContactSection } from '@/sections/ContactSection'
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <EducationSection />
       <TestimonialsSection />
       <AIFocusSection />
+      <FAQSection />
       <ContactSection />
     </>
   )

@@ -30,22 +30,7 @@ export const metadata: Metadata = {
   description:
     'Senior Software Engineer building production-grade SaaS, web/mobile applications, backend systems, and AI-powered products across the full stack.',
   authors: [{ name: 'Ghulam Mustafa' }],
-  keywords: [
-    'Ghulam Mustafa',
-    'Hire Senior React Native Developer',
-    'Freelance Next.js SaaS Developer',
-    'Remote AI Integration Engineer Node.js',
-    'Build AI-powered SaaS MVP',
-    'Migrate React app to Next.js consultant',
-    'React Native offline architecture expert',
-    'Remote Senior Full Stack Engineer React Node',
-    'Senior Mobile Developer for early stage startup',
-    'Senior Software Engineer',
-    'React Native Engineer',
-    'Next.js Developer',
-    'Node.js Developer',
-    'AI Engineer',
-  ],
+
   openGraph: {
     title: {
       default: 'Ghulam Mustafa | Senior Software Engineer | Web, Mobile & AI',
