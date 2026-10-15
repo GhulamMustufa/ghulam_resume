@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
-import { ThemeProvider } from '@/components/ThemeProvider'
-import { SiteHeader } from '@/components/layout/SiteHeader'
-import { Footer } from '@/components/layout/Footer'
+import { PortfolioShell } from '@/components/layout/PortfolioShell'
 import { DynamicScrollToTop } from '@/components/ui/DynamicScrollToTop'
 
 const geistSans = Geist({
@@ -141,16 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <ThemeProvider>
-          <div className="app-shell relative min-h-screen text-[var(--color-text-main)]">
-            <div className="theme-radial pointer-events-none absolute inset-0" aria-hidden="true" />
-            <div className="relative mx-auto max-w-6xl px-4 pb-0 pt-6 sm:px-6 lg:px-8">
-              <SiteHeader />
-              <main>{children}</main>
-              <Footer />
-            </div>
-          </div>
-        </ThemeProvider>
+        <PortfolioShell>{children}</PortfolioShell>
         <DynamicScrollToTop />
         
         {/* Vercel Analytics (Standard First-Party Analytics) */}

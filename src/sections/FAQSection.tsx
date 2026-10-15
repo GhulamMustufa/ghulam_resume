@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Plus, X } from 'lucide-react'
+import { Plus } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const faqs = [
@@ -128,39 +128,63 @@ export function FAQSection() {
   }
 
   return (
-    <section id="faqs" className="py-20">
+    <section id="faqs" className="section-space scroll-mt-20 py-16 sm:py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="mx-auto max-w-3xl">
-        <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl">
-          Frequently Asked Questions
-        </h2>
+        <div className="mb-10 text-center">
+          <p
+            className="text-mono mb-2"
+            style={{ color: 'var(--color-accent-text, #7c3aed)', fontSize: '0.65rem', letterSpacing: '0.18em' }}
+          >
+            ⬡ FAQ
+          </p>
+          <h2
+            className="text-section-title font-bold text-2xl sm:text-4xl tracking-tight"
+            style={{ color: 'var(--color-text-main)' }}
+          >
+            Frequently Asked Questions
+          </h2>
+        </div>
         
-        <div className="space-y-4">
+        <div 
+          className="border-t transition-colors"
+          style={{ borderColor: 'var(--color-border-default)' }}
+        >
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx
             return (
               <div
                 key={idx}
-                className={`overflow-hidden transition-all duration-300 ${
-                  isOpen 
-                    ? 'rounded-lg border-2 border-[var(--color-text-main)] bg-[var(--color-bg-secondary)]' 
-                    : 'border-b border-[var(--color-border)]'
-                }`}
+                className="transition-colors border-b"
+                style={{ 
+                  borderColor: 'var(--color-border-default)',
+                  backgroundColor: isOpen ? 'var(--color-bg-subtle)' : 'transparent'
+                }}
               >
                 <button
+                  type="button"
                   onClick={() => toggleFaq(idx)}
-                  className="flex w-full items-center justify-between p-5 text-left focus:outline-none"
+                  className="flex w-full items-center justify-between py-5 px-3 sm:px-4 text-left focus:outline-none transition-colors group"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-lg font-medium">{faq.question}</span>
-                  {isOpen ? (
-                    <X className="h-5 w-5 flex-shrink-0 text-[var(--color-text-muted)]" />
-                  ) : (
-                    <Plus className="h-5 w-5 flex-shrink-0 text-[var(--color-text-muted)]" />
-                  )}
+                  <span 
+                    className="text-base sm:text-lg font-medium pr-4 transition-colors group-hover:opacity-80"
+                    style={{ color: 'var(--color-text-main)' }}
+                  >
+                    {faq.question}
+                  </span>
+                  <span 
+                    className="flex-shrink-0 h-6 w-6 rounded-md flex items-center justify-center transition-transform duration-200"
+                    style={{ 
+                      color: 'var(--color-text-muted)',
+                      transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)'
+                    }}
+                  >
+                    <Plus className="h-5 w-5" />
+                  </span>
                 </button>
                 <AnimatePresence>
                   {isOpen && (
@@ -169,8 +193,12 @@ export function FAQSection() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-[var(--color-text-muted)] leading-relaxed">
+                      <div 
+                        className="px-3 sm:px-4 pb-5 text-sm sm:text-base leading-relaxed"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
                         {faq.answer}
                       </div>
                     </motion.div>

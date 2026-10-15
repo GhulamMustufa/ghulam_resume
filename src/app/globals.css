@@ -46,11 +46,13 @@
   --color-text-muted: #71717a;
 
   /* Borders */
+  --color-border: var(--color-border-default);
   --color-border-default: #27272a;
   --color-border-strong: #3f3f46;
   --color-border-subtle: #27272a;
 
   /* Backgrounds */
+  --color-bg-secondary: var(--color-bg-subtle);
   --color-bg-subtle: #1c1b1b;
   --color-bg-elevated: #1c1b1b;
   --color-bg-hover: #242323;
