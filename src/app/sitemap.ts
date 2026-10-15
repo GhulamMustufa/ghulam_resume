@@ -25,5 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...projectRoutes, ...serviceRoutes]
+  const agencyBaseUrl = 'https://agency.ghulam-mustafa.com'
+  const agencyRoutes = ['', '/terms', '/privacy'].map((route) => ({
+    url: `${agencyBaseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 0.9 : 0.5,
+  }))
+
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...agencyRoutes]
 }

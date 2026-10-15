@@ -10,9 +10,22 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301)
   }
 
+  // 2. Subdomain routing for agency.ghulam-mustafa.com
+  const hostname = request.headers.get('host') || url.hostname || ''
+  const isAgencySubdomain = hostname.startsWith('agency.') || hostname === 'agency.ghulam-mustafa.com'
+
+  if (isAgencySubdomain) {
+    if (url.pathname === '/') {
+      return NextResponse.rewrite(new URL('/agency', request.url))
+    }
+    if (!url.pathname.startsWith('/agency')) {
+      return NextResponse.rewrite(new URL(`/agency${url.pathname}`, request.url))
+    }
+  }
+
   const userAgent = request.headers.get('user-agent') || ''
   
-  // 2. If the user agent is curl, wget, or HTTPie and they are hitting the root domain
+  // 3. If the user agent is curl, wget, or HTTPie and they are hitting the root domain
   const isTerminalClient = userAgent.startsWith('curl/') || userAgent.startsWith('Wget/') || userAgent.startsWith('HTTPie/')
   
   if (isTerminalClient && request.nextUrl.pathname === '/') {
