@@ -17,6 +17,7 @@ export function IntroVideoSection() {
           <video
             className="h-full w-full object-cover"
             controls
+            poster="/video_thumbnail.jpg"
             preload="metadata"
             playsInline
             muted

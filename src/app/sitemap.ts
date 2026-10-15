@@ -4,7 +4,7 @@ import { projects, services } from '@/data/portfolioData'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ghulam-mustafa.com'
 
-  const staticRoutes = ['', '/about'].map((route) => ({
+  const staticRoutes = ['', '/about', '/qr', '/scanned'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
