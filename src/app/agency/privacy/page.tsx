@@ -12,30 +12,30 @@ export const metadata: Metadata = {
 
 export default function AgencyPrivacyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       {/* Back button */}
       <Link
         href="/agency"
-        className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors mb-8"
+        className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors mb-6"
       >
         <ArrowLeft size={14} />
         Back to GM Labs
       </Link>
 
-      <div className="border-b border-white/[0.08] pb-8 mb-12">
+      <div className="border-b border-white/[0.08] pb-6 mb-8 sm:mb-10">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
           <Lock size={13} />
           DATA PROTECTION &amp; PRIVACY
         </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
           Privacy Policy
         </h1>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-xs sm:text-sm text-slate-400">
           Last updated: October 2026 · Operating Entity: {agencyBrand.legalName}
         </p>
       </div>
 
-      <div className="space-y-10 text-sm text-slate-300 leading-relaxed font-sans">
+      <div className="space-y-8 sm:space-y-10 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
         {/* Section 1 */}
         <section className="space-y-3">
           <h2 className="text-lg font-bold text-white tracking-tight">1. Introduction &amp; Scope</h2>

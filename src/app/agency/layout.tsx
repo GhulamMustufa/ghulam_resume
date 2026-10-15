@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight, Mail, MessageCircle } from 'lucide-react'
 import { agencyBrand } from '@/data/agencyData'
+import { AgencyHeader } from './components/AgencyHeader'
 
 export const metadata: Metadata = {
   title: 'GM Labs | High-Performance Software & Autonomous AI Systems',
@@ -38,42 +39,7 @@ export default function AgencyLayout({
       />
 
       {/* Agency Navigation Header */}
-      <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#070A10]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-          <Link href="/agency" className="flex items-center gap-2.5 group">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-400 font-mono font-bold text-xs group-hover:border-blue-500/40 transition-colors">
-              GM
-            </span>
-            <div className="flex flex-col">
-              <span className="font-mono text-base font-bold tracking-wider text-white">
-                GM LABS
-              </span>
-              <span className="text-[0.62rem] font-mono tracking-widest text-blue-400/90 -mt-0.5 uppercase">
-                AI &amp; SYSTEMS STUDIO
-              </span>
-            </div>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
-            <a href="/agency#services" className="hover:text-white transition-colors">Practice Areas</a>
-            <a href="/agency#case-studies" className="hover:text-white transition-colors">Client Work</a>
-            <a href="/agency#engagement" className="hover:text-white transition-colors">Engagement Models</a>
-            <a href="/agency#process" className="hover:text-white transition-colors">Process</a>
-            <a href="/agency#founder" className="hover:text-white transition-colors">Founder</a>
-            <Link href="/agency/terms" className="hover:text-white transition-colors">Terms</Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="/agency#contact"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-500 transition-all hover:scale-[1.02]"
-            >
-              Start a Project
-              <ArrowUpRight size={14} />
-            </a>
-          </div>
-        </div>
-      </header>
+      <AgencyHeader />
 
       {/* Main Content */}
       <main className="relative z-10">
@@ -81,9 +47,9 @@ export default function AgencyLayout({
       </main>
 
       {/* Agency Footer */}
-      <footer className="relative z-10 border-t border-white/[0.08] bg-[#04060A] pt-14 pb-12 text-slate-400">
+      <footer className="relative z-10 border-t border-white/[0.08] bg-[#04060A] pt-10 sm:pt-14 pb-8 sm:pb-12 text-slate-400">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 pb-12 border-b border-white/[0.06]">
+          <div className="grid gap-8 sm:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pb-8 sm:pb-10 border-b border-white/[0.06]">
             {/* Col 1: Brand & Positioning */}
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
