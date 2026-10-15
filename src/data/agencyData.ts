@@ -224,3 +224,100 @@ export const agencyProcess = [
       'We deploy to your cloud infrastructure, transfer 100% intellectual property rights, provide complete documentation, and support you with a 30-day warranty.',
   },
 ]
+
+export interface AgencyTechItem {
+  name: string
+  category: string
+  highlight?: boolean
+}
+
+export const agencyTechStack: AgencyTechItem[] = [
+  { name: 'LangGraph', category: 'Agentic AI', highlight: true },
+  { name: 'Model Context Protocol (MCP)', category: 'Agentic AI', highlight: true },
+  { name: 'React Native', category: 'Mobile', highlight: true },
+  { name: 'Next.js 15', category: 'Full-Stack', highlight: true },
+  { name: 'TypeScript', category: 'Language' },
+  { name: 'Python & FastAPI', category: 'AI & Backend', highlight: true },
+  { name: 'PostgreSQL & pgvector', category: 'Database', highlight: true },
+  { name: 'Supabase', category: 'Backend' },
+  { name: 'Docker & Kubernetes', category: 'DevOps' },
+  { name: 'AWS & Cloudflare', category: 'Cloud Infra' },
+  { name: 'Redis', category: 'Caching & Queues' },
+  { name: 'Stripe API', category: 'Payments' },
+]
+
+export interface AgencyFAQ {
+  question: string
+  answer: string
+  category: 'Services' | 'Delivery & Process' | 'Legal & IP' | 'AI & Security'
+}
+
+export const agencyFaqs: AgencyFAQ[] = [
+  {
+    category: 'Services',
+    question: 'What engineering services does GM Labs specialize in?',
+    answer:
+      'GM Labs specializes in 4 core practice areas: (1) Autonomous AI & Agentic Systems using LangGraph and Model Context Protocol (MCP), (2) Cross-platform mobile engineering with React Native and Expo, (3) High-scale Full-Stack SaaS platforms with Next.js 15, FastAPI, and PostgreSQL, and (4) Technical architecture and latency optimization audits.',
+  },
+  {
+    category: 'Delivery & Process',
+    question: 'How is GM Labs different from traditional dev agencies or outsource shops?',
+    answer:
+      'We operate as a founder-led, high-conviction engineering studio. Ghulam Mustafa personally architects, reviews, and implements your core systems alongside vetted senior engineers. You never get passed to junior developers, offshore ticket-pushers, or non-technical account managers.',
+  },
+  {
+    category: 'Legal & IP',
+    question: 'Who owns the intellectual property (IP) and source code?',
+    answer:
+      'You own 100% of the code, architecture documents, and digital assets. Upon milestone invoice clearance, all custom source code created for your project transfers exclusively to your business. We retain no proprietary licensing hold or vendor lock-in.',
+  },
+  {
+    category: 'Legal & IP',
+    question: 'Do you sign bilateral Non-Disclosure Agreements (NDAs)?',
+    answer:
+      'Yes, absolutely. We routinely sign bilateral NDAs before receiving access to private repositories, architecture schematics, or sensitive product specifications.',
+  },
+  {
+    category: 'AI & Security',
+    question: 'How does GM Labs ensure client code and data are not used for public AI training?',
+    answer:
+      'We uphold a strict Zero Public AI Model Training Guarantee. All agentic pipelines, RAG systems, and LLM implementations leverage enterprise zero-data-retention APIs or self-hosted private VPC instances. Your proprietary codebase and business data are never exposed to public training datasets.',
+  },
+  {
+    category: 'Delivery & Process',
+    question: 'How quickly can GM Labs initiate a new sprint or project?',
+    answer:
+      'Most engagements can kick off within 48 to 72 hours following the initial technical discovery session and SOW sign-off.',
+  },
+  {
+    category: 'Services',
+    question: 'What engagement models and pricing structures do you offer?',
+    answer:
+      'We offer three transparent engagement models: (1) Fixed-Scope Sprints with milestone-based billing for defined MVPs or feature modules, (2) Dedicated Monthly Retainers for continuous high-velocity engineering capacity, and (3) 2-Week Architecture & AI Audits for targeted bottleneck remediation.',
+  },
+  {
+    category: 'Delivery & Process',
+    question: 'What timezones and working hours does GM Labs support?',
+    answer:
+      'We offer flexible overlap across North American (US Eastern/Pacific), European (GMT/CET), and Asia-Pacific working hours. We provide synchronous standups when needed and continuous asynchronous updates via Slack, Loom, and GitHub.',
+  },
+  {
+    category: 'Legal & IP',
+    question: 'What is included in the 30-day post-launch warranty?',
+    answer:
+      'Every fixed-scope deliverable includes a complimentary 30-day warranty starting on production handover. Any reproducible bug or deviation from the agreed Statement of Work is remediated at zero additional charge.',
+  },
+  {
+    category: 'Services',
+    question: 'Can GM Labs help audit and optimize an existing slow or legacy application?',
+    answer:
+      'Yes. We specialize in deep-dive performance profiling, database index optimization, and API restructuring. In past engagements (such as Lumida Wealth and Udhaar Book), we have reduced API latency by up to 50% and slashed server infrastructure costs.',
+  },
+  {
+    category: 'Delivery & Process',
+    question: 'How do we get started with GM Labs?',
+    answer:
+      'Reach out directly via our intake section, email hello@ghulam-mustafa.com, or contact us on WhatsApp. We schedule a 30-minute discovery session and provide a concrete technical roadmap and milestone proposal within 48 hours.',
+  },
+]
+

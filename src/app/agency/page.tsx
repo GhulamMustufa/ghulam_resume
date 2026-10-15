@@ -13,7 +13,8 @@ import {
   MessageCircle,
   Mail,
   Copy,
-  Check
+  Check,
+  ChevronDown
 } from 'lucide-react'
 import { 
   agencyBrand, 
@@ -21,7 +22,9 @@ import {
   agencyServices, 
   agencyCaseStudies, 
   engagementModels, 
-  agencyProcess 
+  agencyProcess,
+  agencyTechStack,
+  agencyFaqs
 } from '@/data/agencyData'
 
 const serviceIcons = {
@@ -33,6 +36,7 @@ const serviceIcons = {
 
 export default function AgencyHomePage() {
   const [copiedEmail, setCopiedEmail] = useState(false)
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
 
   const handleCopyEmail = async () => {
     try {
@@ -44,10 +48,30 @@ export default function AgencyHomePage() {
     }
   }
 
+  // Schema.org FAQPage structured data for Google / Bing SEO indexing
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: agencyFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <div className="space-y-14 sm:space-y-20 pb-16 sm:pb-24">
+      {/* Schema.org FAQPage Structured Data for Search Engine Crawling */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* ─────────────────────────────────────────
-          1. HERO SECTION
+          1. HERO SECTION & TECH STACK STRIP
       ───────────────────────────────────────── */}
       <section className="pt-8 sm:pt-14 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="flex flex-col items-start max-w-4xl">
@@ -103,6 +127,34 @@ export default function AgencyHomePage() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Battle-Tested Enterprise Tech Stack Strip */}
+        <div className="mt-8 pt-6 border-t border-white/[0.06]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3.5">
+            <p className="text-[0.68rem] font-mono font-semibold uppercase tracking-widest text-blue-400">
+              CORE ENTERPRISE ARCHITECTURE &amp; PRODUCTION STACK
+            </p>
+            <p className="text-[0.68rem] font-mono text-slate-500">
+              Zero Junior Hand-offs · Senior Systems Engineering
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {agencyTechStack.map((tech) => (
+              <span
+                key={tech.name}
+                className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-mono transition-colors ${
+                  tech.highlight
+                    ? 'border border-blue-500/30 bg-blue-500/10 text-blue-300 font-medium'
+                    : 'border border-white/[0.08] bg-white/[0.02] text-slate-300 hover:border-white/20'
+                }`}
+              >
+                {tech.highlight && <span className="h-1.5 w-1.5 rounded-full bg-blue-400 shrink-0" />}
+                <span>{tech.name}</span>
+                <span className="text-[0.65rem] text-slate-500 font-sans">· {tech.category}</span>
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -394,7 +446,62 @@ export default function AgencyHomePage() {
       </section>
 
       {/* ─────────────────────────────────────────
-          7. CONTACT & INTAKE SECTION
+          7. FREQUENTLY ASKED QUESTIONS (FAQ)
+      ───────────────────────────────────────── */}
+      <section id="faq" className="scroll-mt-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 mb-6 sm:mb-8 pb-3 border-b border-white/[0.08]">
+          <div>
+            <p className="text-[0.68rem] sm:text-xs font-mono font-bold text-blue-400 uppercase tracking-widest mb-1">
+              QUESTIONS &amp; ANSWERS
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-md">
+            Direct, transparent answers regarding intellectual property, engineering velocity, AI safety, and sprint engagement models.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {agencyFaqs.map((faq, idx) => {
+            const isOpen = openFaqIndex === idx
+            return (
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors hover:border-white/10"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                  className="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 focus:outline-none"
+                  aria-expanded={isOpen}
+                >
+                  <div className="space-y-1.5 pr-2">
+                    <span className="inline-block text-[0.65rem] font-mono font-semibold px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                      {faq.category}
+                    </span>
+                    <h3 className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <div className={`shrink-0 mt-1 h-7 w-7 rounded-lg border border-white/10 bg-white/[0.04] flex items-center justify-center text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue-400 border-blue-500/30 bg-blue-500/10' : ''}`}>
+                    <ChevronDown size={15} />
+                  </div>
+                </button>
+                {isOpen && (
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/[0.04] mt-1">
+                    <p className="pt-3">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────
+          8. CONTACT & INTAKE SECTION
       ───────────────────────────────────────── */}
       <section id="contact" className="scroll-mt-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="rounded-2xl sm:rounded-3xl border border-blue-500/20 bg-gradient-to-b from-blue-950/20 via-white/[0.02] to-transparent p-6 sm:p-10 md:p-12">

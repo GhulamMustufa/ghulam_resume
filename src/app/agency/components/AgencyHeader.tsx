@@ -59,6 +59,7 @@ export function AgencyHeader() {
           <a href="/agency#engagement" className="hover:text-white transition-colors">Engagement Models</a>
           <a href="/agency#process" className="hover:text-white transition-colors">Process</a>
           <a href="/agency#founder" className="hover:text-white transition-colors">Founder</a>
+          <a href="/agency#faq" className="hover:text-white transition-colors">FAQ</a>
           <Link href="/agency/terms" className="hover:text-white transition-colors">Terms</Link>
         </nav>
 
@@ -127,6 +128,13 @@ export function AgencyHeader() {
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Founder (Ghulam Mustafa)
+              </a>
+              <a
+                href="/agency#faq"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
+              >
+                Frequently Asked Questions (FAQ)
               </a>
             </div>
 
