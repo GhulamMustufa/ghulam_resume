@@ -101,6 +101,7 @@ export function HeroSection() {
                 src="/photo.jpg"
                 alt="Ghulam Mustafa — Senior Full-Stack &amp; Mobile Engineer"
                 fill
+                sizes="(max-width: 640px) 144px, 176px"
                 className="object-cover object-top"
                 priority
                 fetchPriority="high"

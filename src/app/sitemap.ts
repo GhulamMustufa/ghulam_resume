@@ -1,10 +1,12 @@
 import type { MetadataRoute } from 'next'
 import { projects, services } from '@/data/portfolioData'
+import { seoServices } from '@/data/seoServices'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ghulam-mustafa.com'
 
-  const staticRoutes = ['', '/about', '/qr', '/scanned'].map((route) => ({
+  // Only canonical indexable 200 OK pages (excluding /scanned redirect and /qr utility)
+  const staticRoutes = ['', '/about'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
@@ -18,20 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  const serviceRoutes = services.map((service) => ({
+  const allServices = [...services, ...seoServices]
+  const serviceRoutes = allServices.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }))
 
-  const agencyBaseUrl = 'https://agency.ghulam-mustafa.com'
-  const agencyRoutes = ['', '/terms', '/privacy'].map((route) => ({
-    url: `${agencyBaseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 0.9 : 0.5,
-  }))
-
-  return [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...agencyRoutes]
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes]
 }

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | GM Labs',
   description:
     'Privacy Policy for GM Labs Technology Consulting. How we protect client information, proprietary project data, and ensure GDPR/CCPA compliance.',
+  alternates: {
+    canonical: '/privacy',
+  },
 }
 
 export default function AgencyPrivacyPage() {
@@ -15,7 +18,7 @@ export default function AgencyPrivacyPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       {/* Back button */}
       <Link
-        href="/agency"
+        href="/"
         className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors mb-6"
       >
         <ArrowLeft size={14} />
@@ -138,9 +141,11 @@ export default function AgencyPrivacyPage() {
           <p>
             If you have questions or concerns regarding this Privacy Policy or our security practices, please reach out to:
           </p>
-          <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 font-mono text-xs text-slate-300 space-y-1">
-            <p><strong className="text-white">Entity:</strong> {agencyBrand.legalName}</p>
-            <p><strong className="text-white">Data Officer:</strong> Ghulam Mustafa</p>
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 font-mono text-xs text-slate-300 space-y-1.5">
+            <p><strong className="text-white">Operating Entity:</strong> {agencyBrand.legalName}</p>
+            <p><strong className="text-white">Operational Hubs:</strong> Karachi, Pakistan &amp; Kuala Lumpur, Malaysia (Remote-First Digital Practice)</p>
+            <p><strong className="text-white">Data Protection Officer:</strong> Ghulam Mustafa</p>
+            <p><strong className="text-white">Support SLA:</strong> Response within 24 business hours</p>
             <p><strong className="text-white">Email:</strong> {agencyBrand.email}</p>
             <p><strong className="text-white">Website:</strong> https://agency.ghulam-mustafa.com</p>
           </div>

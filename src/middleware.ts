@@ -15,12 +15,24 @@ export function middleware(request: NextRequest) {
   const isAgencySubdomain = hostname.startsWith('agency.') || hostname === 'agency.ghulam-mustafa.com'
 
   if (isAgencySubdomain) {
+    if (url.pathname === '/sitemap.xml') {
+      return NextResponse.rewrite(new URL('/api/agency-sitemap', request.url))
+    }
+    if (url.pathname === '/robots.txt') {
+      return NextResponse.rewrite(new URL('/api/agency-robots', request.url))
+    }
+    if (url.pathname === '/agency' || url.pathname === '/agency/') {
+      url.pathname = '/'
+      return NextResponse.redirect(url, 301)
+    }
+    if (url.pathname.startsWith('/agency/')) {
+      url.pathname = url.pathname.replace(/^\/agency/, '')
+      return NextResponse.redirect(url, 301)
+    }
     if (url.pathname === '/') {
       return NextResponse.rewrite(new URL('/agency', request.url))
     }
-    if (!url.pathname.startsWith('/agency')) {
-      return NextResponse.rewrite(new URL(`/agency${url.pathname}`, request.url))
-    }
+    return NextResponse.rewrite(new URL(`/agency${url.pathname}`, request.url))
   }
 
   const userAgent = request.headers.get('user-agent') || ''

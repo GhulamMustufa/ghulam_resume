@@ -35,7 +35,7 @@ export function AgencyHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Brand Logo */}
         <Link 
-          href="/agency" 
+          href="/" 
           className="flex items-center gap-2.5 group"
           onClick={() => setMobileMenuOpen(false)}
         >
@@ -54,24 +54,24 @@ export function AgencyHeader() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
-          <a href="/agency#services" className="hover:text-white transition-colors">Practice Areas</a>
-          <a href="/agency#case-studies" className="hover:text-white transition-colors">Client Work</a>
-          <a href="/agency#engagement" className="hover:text-white transition-colors">Engagement Models</a>
-          <a href="/agency#process" className="hover:text-white transition-colors">Process</a>
-          <a href="/agency#founder" className="hover:text-white transition-colors">Founder</a>
-          <a href="/agency#faq" className="hover:text-white transition-colors">FAQ</a>
+          <Link href="/agency#services" className="hover:text-white transition-colors">Practice Areas</Link>
+          <Link href="/agency#case-studies" className="hover:text-white transition-colors">Client Work</Link>
+          <Link href="/agency#engagement" className="hover:text-white transition-colors">Engagement Models</Link>
+          <Link href="/agency#process" className="hover:text-white transition-colors">Process</Link>
+          <Link href="/agency#founder" className="hover:text-white transition-colors">Founder</Link>
+          <Link href="/agency#faq" className="hover:text-white transition-colors">FAQ</Link>
           <Link href="/agency/terms" className="hover:text-white transition-colors">Terms</Link>
         </nav>
 
         {/* Desktop Action & Mobile Menu Toggle */}
         <div className="flex items-center gap-2.5">
-          <a
+          <Link
             href="/agency#contact"
             className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-500 transition-all hover:scale-[1.02]"
           >
             Start a Project
             <ArrowUpRight size={14} />
-          </a>
+          </Link>
 
           {/* Mobile hamburger button */}
           <button
@@ -94,48 +94,48 @@ export function AgencyHeader() {
               Navigation
             </p>
             <div className="flex flex-col space-y-1">
-              <a
+              <Link
                 href="/agency#services"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Practice Areas
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency#case-studies"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Client Work &amp; Case Studies
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency#engagement"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Engagement Models &amp; Pricing
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency#process"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Delivery Process
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency#founder"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Founder (Ghulam Mustafa)
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency#faq"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-white transition-colors"
               >
                 Frequently Asked Questions (FAQ)
-              </a>
+              </Link>
             </div>
 
             <div className="pt-3 border-t border-white/[0.08] flex flex-col space-y-1">
@@ -143,7 +143,7 @@ export function AgencyHeader() {
                 Legal &amp; Portfolio
               </p>
               <Link
-                href="/agency/terms"
+                href="/terms"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2 rounded-xl text-xs font-medium text-slate-300 hover:bg-white/[0.06] hover:text-white transition-colors flex items-center justify-between"
               >
@@ -151,7 +151,7 @@ export function AgencyHeader() {
                 <Shield size={13} className="text-blue-400" />
               </Link>
               <Link
-                href="/agency/privacy"
+                href="/privacy"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2 rounded-xl text-xs font-medium text-slate-300 hover:bg-white/[0.06] hover:text-white transition-colors flex items-center justify-between"
               >
@@ -171,14 +171,14 @@ export function AgencyHeader() {
           </nav>
 
           <div className="pt-6 border-t border-white/[0.08] space-y-3">
-            <a
+            <Link
               href="/agency#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 active:bg-blue-500 transition-colors"
             >
               Start a Project Discovery
               <ArrowUpRight size={16} />
-            </a>
+            </Link>
             <p className="text-center font-mono text-[0.65rem] text-slate-500">
               Q4 ENGAGEMENTS OPEN · RESPONSE WITHIN 24H
             </p>

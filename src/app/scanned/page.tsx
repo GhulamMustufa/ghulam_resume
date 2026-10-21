@@ -89,6 +89,7 @@ END:VCARD`
             src="/photo.jpg" 
             alt="Ghulam Mustafa" 
             fill 
+            sizes="112px"
             className="object-cover object-top"
             priority
           />

@@ -6,11 +6,15 @@ import { agencyBrand } from '@/data/agencyData'
 import { AgencyHeader } from './components/AgencyHeader'
 
 export const metadata: Metadata = {
-  title: 'GM Labs | High-Performance Software & Autonomous AI Systems',
+  metadataBase: new URL('https://agency.ghulam-mustafa.com'),
+  title: {
+    default: 'GM Labs | High-Performance Software & Autonomous AI Systems',
+    template: '%s | GM Labs',
+  },
   description:
     'Boutique software engineering and autonomous AI systems studio founded by Ghulam Mustafa. Architecting high-concurrency mobile apps, resilient cloud backends, and deterministic AI pipelines.',
   alternates: {
-    canonical: 'https://agency.ghulam-mustafa.com',
+    canonical: '/',
   },
   openGraph: {
     title: 'GM Labs | Engineering High-Performance Software & AI Systems',
@@ -19,6 +23,21 @@ export const metadata: Metadata = {
     url: 'https://agency.ghulam-mustafa.com',
     siteName: 'GM Labs',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'GM Labs | High-Performance Software & Autonomous AI Systems',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GM Labs | Engineering High-Performance Software & AI Systems',
+    description:
+      'We partner with venture-backed startups and growth enterprises to build production mobile apps, high-throughput cloud backends, and agentic AI architectures.',
+    images: ['/og-image.jpg'],
   },
 }
 
@@ -74,10 +93,10 @@ export default function AgencyLayout({
                 Practice Areas
               </p>
               <ul className="space-y-2 text-xs">
-                <li><a href="/agency#services" className="hover:text-white transition-colors">Autonomous AI &amp; Agents</a></li>
-                <li><a href="/agency#services" className="hover:text-white transition-colors">React Native Mobile Engineering</a></li>
-                <li><a href="/agency#services" className="hover:text-white transition-colors">Full-Stack SaaS &amp; Cloud</a></li>
-                <li><a href="/agency#services" className="hover:text-white transition-colors">Architecture &amp; Latency Audits</a></li>
+                <li><Link href="/agency#services" className="hover:text-white transition-colors">Autonomous AI &amp; Agents</Link></li>
+                <li><Link href="/agency#services" className="hover:text-white transition-colors">React Native Mobile Engineering</Link></li>
+                <li><Link href="/agency#services" className="hover:text-white transition-colors">Full-Stack SaaS &amp; Cloud</Link></li>
+                <li><Link href="/agency#services" className="hover:text-white transition-colors">Architecture &amp; Latency Audits</Link></li>
               </ul>
             </div>
 
@@ -123,9 +142,9 @@ export default function AgencyLayout({
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <p>© {new Date().getFullYear()} GM Labs Technology Consulting. All rights reserved.</p>
-            <p className="font-mono text-[0.7rem] text-slate-600">
-              COMMERCIAL_ENTITY · READY FOR STRIPE / PAYPAL GATEWAYS
+            <p>© {new Date().getFullYear()} GM Labs. All rights reserved.</p>
+            <p className="font-mono text-[0.7rem] text-slate-500">
+              Operational Hubs: Karachi, PK · Kuala Lumpur, MY · Remote-First
             </p>
           </div>
         </div>

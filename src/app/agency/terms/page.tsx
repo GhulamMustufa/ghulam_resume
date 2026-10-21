@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Commercial Terms of Service | GM Labs',
   description:
     'Commercial terms of service, engagement policies, intellectual property transfer, milestone billing, and warranty terms for GM Labs clients.',
+  alternates: {
+    canonical: '/terms',
+  },
 }
 
 export default function AgencyTermsPage() {
@@ -15,7 +18,7 @@ export default function AgencyTermsPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       {/* Back button */}
       <Link
-        href="/agency"
+        href="/"
         className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors mb-6"
       >
         <ArrowLeft size={14} />
@@ -122,19 +125,37 @@ export default function AgencyTermsPage() {
             <li>
               Deposits for unscheduled or uninitiated sprint work are refundable minus any incurred transaction or architecture setup costs.
             </li>
+            <li>
+              <strong>Refund Processing Timeline:</strong> Any mutually agreed or approved refunds will be credited back to the Client&apos;s original payment method (Stripe, card, or bank account) within five (5) to ten (10) business days.
+            </li>
           </ul>
         </section>
 
         {/* Section 7 */}
         <section className="space-y-3">
-          <h2 className="text-lg font-bold text-white tracking-tight">7. Contact &amp; Legal Notices</h2>
+          <h2 className="text-lg font-bold text-white tracking-tight">7. Digital Delivery &amp; Fulfillment Policy</h2>
           <p>
-            For commercial inquiries, invoicing disputes, or legal documentation, please contact our team directly:
+            GM Labs delivers digital software engineering services exclusively through electronic means:
           </p>
-          <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 font-mono text-xs text-slate-300 space-y-1">
-            <p><strong className="text-white">Entity:</strong> {agencyBrand.legalName}</p>
+          <ul className="list-disc pl-5 space-y-2 text-slate-300">
+            <li>Custom source code is delivered via private GitHub / GitLab repository handovers with full commit history.</li>
+            <li>Live applications and cloud services are deployed to Client-controlled cloud infrastructure (AWS, GCP, Vercel, Supabase) with verified staging sign-off.</li>
+            <li>Architecture documentation, API schemas, and deployment playbooks are delivered digitally upon sprint conclusion.</li>
+          </ul>
+        </section>
+
+        {/* Section 8 */}
+        <section className="space-y-3">
+          <h2 className="text-lg font-bold text-white tracking-tight">8. Contact, Operating Hubs &amp; Legal Notices</h2>
+          <p>
+            For commercial inquiries, invoicing disputes, payment verification, or legal notices, please reach out to our team:
+          </p>
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 font-mono text-xs text-slate-300 space-y-1.5">
+            <p><strong className="text-white">Operating Entity:</strong> {agencyBrand.legalName}</p>
+            <p><strong className="text-white">Operational Hubs:</strong> Karachi, Pakistan &amp; Kuala Lumpur, Malaysia (Remote-First Digital Practice)</p>
+            <p><strong className="text-white">Support SLA:</strong> Inquiries acknowledged within 24 business hours</p>
             <p><strong className="text-white">Direct Email:</strong> {agencyBrand.email}</p>
-            <p><strong className="text-white">Inquiries:</strong> https://agency.ghulam-mustafa.com</p>
+            <p><strong className="text-white">Website:</strong> https://agency.ghulam-mustafa.com</p>
           </div>
         </section>
       </div>

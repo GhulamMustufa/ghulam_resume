@@ -762,5 +762,40 @@ export const seoServices: Service[] = [
       { question: 'What is "follow-the-sun" development?', answer: 'It means when your US-based team finishes their day, they hand off tasks to me in Asia. I work while they sleep, and when they wake up, the features are complete and ready for review.' },
       { question: 'Can you work independently without hand-holding?', answer: 'Yes. As a senior engineer, I am extremely comfortable reading existing codebases, interpreting loose PRDs, and making smart architectural decisions autonomously.' }
     ]
+  },
+  {
+    slug: 'ai-workflow-automation',
+    title: 'AI Workflow Automation & Agentic Systems Engineer',
+    description: 'Design and deploy production-grade AI workflow automation, autonomous agent pipelines, and custom API orchestrators with deterministic gating.',
+    tags: ['AI Automation', 'Agentic Workflows', 'LangChain', 'Node.js', 'Python', 'Docker', 'OpenAI API', 'MCP', 'Tool Calling'],
+    icon: Sparkles,
+    showOnHomepage: false,
+    metricDrivenHeader: 'Eliminate manual bottlenecks with self-verifying autonomous AI systems.',
+    capabilities: [
+      'Deterministic Safety Gates & Anti-Hallucination Layers',
+      'Docker-Sandboxed Autonomous Code Execution',
+      'Custom Webhook & API Pipeline Orchestration',
+      'LLM Tool Calling & Structured JSON Schemas',
+      'Self-Healing Data Extraction & Web Scrapers'
+    ],
+    caseStudySlugs: ['omnibid', 'devfix'],
+    faqs: [
+      {
+        question: 'How do you prevent automated AI workflows from hallucinating or making errors?',
+        answer: 'I employ deterministic guardrails where code strictly enforces boundaries before and after model invocation. AI is used solely for reasoning, while hardcoded schemas and validation layers ensure 100% predictable execution.'
+      },
+      {
+        question: 'What platforms and tools do you use for AI automation?',
+        answer: 'Depending on your needs, I architect custom Node.js/TypeScript and Python event-driven pipelines, utilize LangChain/LlamaIndex, integrate Model Context Protocol (MCP), or build Docker-sandboxed execution agents.'
+      },
+      {
+        question: 'Can you automate complex multi-step developer workflows?',
+        answer: 'Yes. For example, in DevFix I built an autonomous agent that catches broken build errors, spins up an isolated Docker container, writes code patches, and verifies compilation before committing changes.'
+      },
+      {
+        question: 'How do you handle API cost control and rate limiting?',
+        answer: 'I implement deterministic pre-filtering (dropping invalid jobs or spam before the LLM is invoked), semantic response caching, token usage monitoring, and automatic fallback routing to cost-efficient smaller models.'
+      }
+    ]
   }
 ]

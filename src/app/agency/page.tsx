@@ -37,6 +37,14 @@ const serviceIcons = {
 export default function AgencyHomePage() {
   const [copiedEmail, setCopiedEmail] = useState(false)
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0)
+  const [selectedProjectType, setSelectedProjectType] = useState('Autonomous AI & Agents')
+
+  const projectTypes = [
+    'Autonomous AI & Agents',
+    'React Native Mobile App',
+    'Full-Stack Cloud SaaS',
+    'Latency & Architecture Audit',
+  ]
 
   const handleCopyEmail = async () => {
     try {
@@ -46,6 +54,49 @@ export default function AgencyHomePage() {
     } catch {
       setCopiedEmail(false)
     }
+  }
+
+  // Schema.org ProfessionalService & Organization structured data
+  const orgJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'GM Labs',
+    alternateName: 'GM Labs Technology Consulting',
+    url: 'https://agency.ghulam-mustafa.com',
+    logo: 'https://agency.ghulam-mustafa.com/logo.png',
+    image: 'https://agency.ghulam-mustafa.com/og-image.jpg',
+    description: agencyBrand.subheadline,
+    founder: {
+      '@type': 'Person',
+      name: 'Ghulam Mustafa',
+      jobTitle: 'Founder & Principal Systems Architect',
+      url: 'https://ghulam-mustafa.com',
+      sameAs: [
+        'https://github.com/GhulamMustufa',
+        'https://www.linkedin.com/in/ghulam909',
+        'https://twitter.com/GhulamMustufa',
+      ],
+    },
+    areaServed: 'Worldwide',
+    knowsAbout: [
+      'Autonomous AI Systems',
+      'React Native Mobile Engineering',
+      'Next.js Full-Stack Architecture',
+      'High-Throughput Node.js Backends',
+      'Latency Audits & Performance Tuning',
+    ],
+    serviceType: [
+      'Autonomous AI Development',
+      'Cross-Platform Mobile App Engineering',
+      'SaaS Web Application Architecture',
+      'Cloud Infrastructure & API Design',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: agencyBrand.email,
+      contactType: 'customer support',
+      availableLanguage: ['English', 'Urdu'],
+    },
   }
 
   // Schema.org FAQPage structured data for Google / Bing SEO indexing
@@ -64,7 +115,11 @@ export default function AgencyHomePage() {
 
   return (
     <div className="space-y-14 sm:space-y-20 pb-16 sm:pb-24">
-      {/* Schema.org FAQPage Structured Data for Search Engine Crawling */}
+      {/* Schema.org Structured Data for Search Engine Crawling */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -304,6 +359,7 @@ export default function AgencyHomePage() {
                 src="/photo.jpg"
                 alt="Ghulam Mustafa - Founder of GM Labs"
                 fill
+                sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, 208px"
                 className="object-cover object-top"
               />
             </div>
@@ -516,17 +572,40 @@ export default function AgencyHomePage() {
               Whether you need to ship a new product from scratch, integrate deterministic AI workflows, or scale an existing codebase, let&apos;s talk technical requirements.
             </p>
 
+            {/* Interactive Scope Pre-Selection */}
+            <div className="pt-3 pb-1">
+              <p className="text-[0.68rem] font-mono uppercase tracking-wider text-slate-400 mb-2.5">
+                Select your primary technical requirement:
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                {projectTypes.map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setSelectedProjectType(type)}
+                    className={`rounded-lg px-3 py-1.5 text-xs font-mono transition-all ${
+                      selectedProjectType === type
+                        ? 'border border-blue-500 bg-blue-600/20 text-blue-300 font-semibold shadow-sm shadow-blue-500/20'
+                        : 'border border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-white'
+                    }`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-4">
               <a
-                href={`mailto:${agencyBrand.email}?subject=Project%20Inquiry%20via%20GM%20Labs`}
+                href={`mailto:${agencyBrand.email}?subject=${encodeURIComponent(`Project Inquiry: ${selectedProjectType} via GM Labs`)}`}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-500/20 hover:bg-blue-500 transition-all active:scale-[0.99] sm:hover:scale-[1.02]"
               >
                 <Mail size={15} />
-                <span>Email: {agencyBrand.email}</span>
+                <span>Email for {selectedProjectType.split(' ')[0]}</span>
               </a>
 
               <a
-                href="https://wa.me/60148130908"
+                href={`https://wa.me/60148130908?text=${encodeURIComponent(`Hi Ghulam, I am reaching out via GM Labs regarding: ${selectedProjectType}. Let's discuss technical requirements.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-semibold text-emerald-300 hover:bg-emerald-500/20 transition-all text-center"
@@ -537,7 +616,7 @@ export default function AgencyHomePage() {
 
               <button
                 onClick={handleCopyEmail}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-slate-300 hover:bg-white/[0.08] transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-xs sm:text-sm font-semibold text-slate-300 hover:bg-white/[0.08] transition-all"
               >
                 {copiedEmail ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
                 <span>{copiedEmail ? 'Email Copied!' : 'Copy Email'}</span>

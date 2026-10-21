@@ -29,12 +29,13 @@ export interface EngagementModel {
 
 export const agencyBrand = {
   name: 'GM Labs',
-  legalName: 'GM Labs Technology Consulting',
+  legalName: 'GM Labs',
   founder: 'Ghulam Mustafa',
   founderTitle: 'Founder & Principal Systems Architect',
   email: 'hello@ghulam-mustafa.com',
   whatsappMY: '+60 14-813 0908',
   whatsappPK: '+92 308-701 5957',
+  hubs: 'Karachi, Pakistan & Kuala Lumpur, Malaysia (Remote-First Digital Practice)',
   tagline: 'Engineering High-Performance Software & Autonomous AI Systems',
   subheadline:
     'We partner with venture-backed startups and growth-stage enterprises to architect production web platforms, mission-critical mobile apps, and deterministic AI systems.',

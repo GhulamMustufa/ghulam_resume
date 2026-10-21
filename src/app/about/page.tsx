@@ -1,7 +1,23 @@
+import type { Metadata } from 'next'
 import { AchievementsSection } from '@/sections/AchievementsSection'
 import { SkillsSection } from '@/sections/SkillsSection'
 import { ExperienceSection } from '@/sections/ExperienceSection'
 import { EducationSection } from '@/sections/EducationSection'
+
+export const metadata: Metadata = {
+  title: 'About Ghulam Mustafa | Senior Software Engineer & AI Architect',
+  description:
+    'Background, engineering philosophy, and enterprise track record of Ghulam Mustafa. Over 5 years scaling React Native mobile apps and autonomous AI SaaS platforms.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Ghulam Mustafa | Senior Software Engineer & AI Architect',
+    description:
+      'Learn about Ghulam Mustafa: Senior Software Engineer with zero-rollback releases on high-net-worth fintech platforms and apps serving 100K+ active users.',
+    url: 'https://ghulam-mustafa.com/about',
+  },
+}
 
 export default function AboutPage() {
   return (

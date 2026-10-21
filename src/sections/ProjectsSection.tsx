@@ -109,6 +109,7 @@ export function ProjectsSection() {
                   src={(isDark ? project.imageDark : project.imageLight) || project.image || ''}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className={clsx('object-cover object-center transition-opacity', isDark && 'opacity-[0.85]')}
                 />
               </div>
