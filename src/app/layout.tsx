@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
@@ -118,7 +119,12 @@ const jsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const isAgencyHeader = headersList.get('x-is-agency') === '1'
+  const host = headersList.get('x-forwarded-host') || headersList.get('host') || ''
+  const isAgency = isAgencyHeader || host.startsWith('agency.') || host === 'agency.ghulam-mustafa.com'
+
   return (
     <html
       lang="en"
@@ -139,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <PortfolioShell>{children}</PortfolioShell>
+        <PortfolioShell isAgencyInitial={isAgency}>{children}</PortfolioShell>
         <DynamicScrollToTop />
         
         {/* Vercel Analytics (Standard First-Party Analytics) */}

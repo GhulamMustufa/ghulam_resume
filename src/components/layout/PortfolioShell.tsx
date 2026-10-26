@@ -1,16 +1,37 @@
 'use client'
 
-import React from 'react'
+import React, { useSyncExternalStore } from 'react'
 import { usePathname } from 'next/navigation'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { Footer } from '@/components/layout/Footer'
 
-export function PortfolioShell({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
-  const isAgency = pathname?.startsWith('/agency')
+const emptySubscribe = () => () => {}
 
-  // If viewing GM Labs agency routes, render children without portfolio shell, header, or footer
+export function PortfolioShell({
+  children,
+  isAgencyInitial = false,
+}: {
+  children: React.ReactNode
+  isAgencyInitial?: boolean
+}) {
+  const pathname = usePathname()
+  const isAgencyClient = useSyncExternalStore(
+    emptySubscribe,
+    () => {
+      if (typeof window === 'undefined') return isAgencyInitial
+      const host = window.location.hostname
+      return host.startsWith('agency.') || host === 'agency.ghulam-mustafa.com'
+    },
+    () => isAgencyInitial
+  )
+
+  const isAgency =
+    isAgencyInitial ||
+    isAgencyClient ||
+    pathname?.startsWith('/agency')
+
+  // If viewing GM Labs agency routes or subdomain, render children without portfolio shell, header, or footer
   if (isAgency) {
     return <>{children}</>
   }

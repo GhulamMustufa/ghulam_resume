@@ -15,11 +15,19 @@ export function middleware(request: NextRequest) {
   const isAgencySubdomain = hostname.startsWith('agency.') || hostname === 'agency.ghulam-mustafa.com'
 
   if (isAgencySubdomain) {
+    const requestHeaders = new Headers(request.headers)
+    requestHeaders.set('x-is-agency', '1')
+    requestHeaders.set('x-subdomain', 'agency')
+
     if (url.pathname === '/sitemap.xml') {
-      return NextResponse.rewrite(new URL('/api/agency-sitemap', request.url))
+      return NextResponse.rewrite(new URL('/api/agency-sitemap', request.url), {
+        request: { headers: requestHeaders },
+      })
     }
     if (url.pathname === '/robots.txt') {
-      return NextResponse.rewrite(new URL('/api/agency-robots', request.url))
+      return NextResponse.rewrite(new URL('/api/agency-robots', request.url), {
+        request: { headers: requestHeaders },
+      })
     }
     if (url.pathname === '/agency' || url.pathname === '/agency/') {
       url.pathname = '/'
@@ -30,9 +38,13 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(url, 301)
     }
     if (url.pathname === '/') {
-      return NextResponse.rewrite(new URL('/agency', request.url))
+      return NextResponse.rewrite(new URL('/agency', request.url), {
+        request: { headers: requestHeaders },
+      })
     }
-    return NextResponse.rewrite(new URL(`/agency${url.pathname}`, request.url))
+    return NextResponse.rewrite(new URL(`/agency${url.pathname}`, request.url), {
+      request: { headers: requestHeaders },
+    })
   }
 
   const userAgent = request.headers.get('user-agent') || ''
